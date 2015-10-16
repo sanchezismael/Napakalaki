@@ -63,6 +63,8 @@ public class PruebaNapakalaki {
         Prize pChibithulhu = new Prize(1,1);
         monstruos.add(new Monster("Chibithulhu",2,badChibithulhu,pChibithulhu));
         
+        //El sopor de Dunwich
+        
         //Los hondos
         
         BadConsequence bCLosHondos = new BadConsequence("Estos monstruos resultan"
