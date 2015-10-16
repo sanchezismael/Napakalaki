@@ -84,6 +84,8 @@ public class PruebaNapakalaki {
                 + " muerto",true);
         Prize pFamiliaFeliz = new Prize(4,1);
         monstruos.add(new Monster("Familia feliz",1,bCFamiliaFeliz,pFamiliaFeliz));
+        
+        //Otro Monstruo
     }
     
 }
