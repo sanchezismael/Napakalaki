@@ -60,6 +60,21 @@ public class PruebaNapakalaki {
         badChibithulhu = new BadConsequence("Embobados con el "
                 + "lindo primigenio te descartas de tu casco visible",0,
                 new ArrayList(Arrays.asList(TreasureKind.HELMET)),null);
+        
+        
+        //Los hondos
+        
+        BadConsequence bCLosHondos = new BadConsequence("Estos monstruos resultan"
+                + "bastante superficiales y te aburren mortalmente. Estas muerto.",true);
+        Prize pLosHondos = new Prize(2,1);
+        monstruos.add(new Monster("Los hondos",8,pLosHondos,bCLosHondos));
+        
+        // Familia Feliz
+        
+        BadConsequence bCFamiliaFeliz = new BadConsequence("La familia te atrapa. Estas"
+                + " muerto",true);
+        Prize pFamiliaFeliz = new Prize(4,1);
+        monstruos.add(new Monster("Familia feliz",1,pFamiliaFeliz,bCFamiliaFeliz));
     }
     
 }
