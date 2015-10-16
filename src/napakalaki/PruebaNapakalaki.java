@@ -60,9 +60,6 @@ public class PruebaNapakalaki {
         badChibithulhu = new BadConsequence("Embobados con el "
                 + "lindo primigenio te descartas de tu casco visible",0,
                 new ArrayList(Arrays.asList(TreasureKind.HELMET)),null);
-        //otro mostruo
-        //hghfvgjhgkj
-        
         
         //Los hondos
         
