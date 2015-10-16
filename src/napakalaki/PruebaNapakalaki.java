@@ -24,7 +24,7 @@ public class PruebaNapakalaki {
         Prize unPrize = new Prize(3,1);
         BadConsequence unBad = new BadConsequence("Pierdes todos tus tesoros "
                 + "visibles",false);
-        Monster unMonster = new Monster("El gorrón en el umbral",10,unPrize,unBad);
+        Monster unMonster = new Monster("El gorrón en el umbral",10,unBad,unPrize);
         
         System.out.println(unMonster.toString());
         
@@ -35,7 +35,7 @@ public class PruebaNapakalaki {
                 + "tesoros visibles",
         5,3,0);
         Prize prizeReyRosa = new Prize(4,2);
-        monstruos.add(new Monster("El rey de rosa",13,prizeReyRosa,badReyRosa));
+        monstruos.add(new Monster("El rey de rosa",13,badReyRosa,prizeReyRosa));
         
         //Ángeles de la noche ibicenca
         BadConsequence badAngelesIbicencos = new BadConsequence("Te atrapan para"
@@ -44,16 +44,16 @@ public class PruebaNapakalaki {
                 (Arrays.asList(TreasureKind.ONEHAND)),new ArrayList
                 (Arrays.asList(TreasureKind.ONEHAND)));
         Prize prizeAngelesIbicencos = new Prize(4,1);
-        monstruos.add(new Monster("Angeles de la noche ibicenca",14,
-                prizeAngelesIbicencos,badAngelesIbicencos));
+        monstruos.add(new Monster("Angeles de la noche ibicenca",14,badAngelesIbicencos,
+                prizeAngelesIbicencos));
         
         //3 Byakhees de bonanza
         BadConsequence badByakhees = new BadConsequence("Pierdes tu armadura "
                 + "visible y otra oculta",0,new ArrayList(Arrays.asList(
                 TreasureKind.ARMOR)),new ArrayList(Arrays.asList(TreasureKind.ARMOR)));
         Prize prizeByakhees = new Prize(2,1);
-        monstruos.add(new Monster("3 Byakhees de bonanza",8,
-                prizeByakhees,badByakhees));
+        monstruos.add(new Monster("3 Byakhees de bonanza",8,badByakhees,
+                prizeByakhees));
         
         //badChibithulhu
         BadConsequence badChibithulhu;
@@ -69,14 +69,14 @@ public class PruebaNapakalaki {
         BadConsequence bCLosHondos = new BadConsequence("Estos monstruos resultan"
                 + "bastante superficiales y te aburren mortalmente. Estas muerto.",true);
         Prize pLosHondos = new Prize(2,1);
-        monstruos.add(new Monster("Los hondos",8,pLosHondos,bCLosHondos));
+        monstruos.add(new Monster("Los hondos",8,bCLosHondos,pLosHondos));
         
         // Familia Feliz
         
         BadConsequence bCFamiliaFeliz = new BadConsequence("La familia te atrapa. Estas"
                 + " muerto",true);
         Prize pFamiliaFeliz = new Prize(4,1);
-        monstruos.add(new Monster("Familia feliz",1,pFamiliaFeliz,bCFamiliaFeliz));
+        monstruos.add(new Monster("Familia feliz",1,bCFamiliaFeliz,pFamiliaFeliz));
     }
     
 }

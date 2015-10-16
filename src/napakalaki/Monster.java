@@ -15,7 +15,7 @@ public class Monster {
     private Prize unPrize;
     private BadConsequence unBad;
     
-    Monster(String name, int level, Prize price, BadConsequence bc){
+    Monster(String name, int level,BadConsequence bc,Prize price){
         this.name = name;
         this.combatLevel = level;
         this.unPrize = price;
