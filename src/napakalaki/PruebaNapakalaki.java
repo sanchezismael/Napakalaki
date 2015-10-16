@@ -64,6 +64,12 @@ public class PruebaNapakalaki {
         monstruos.add(new Monster("Chibithulhu",2,badChibithulhu,pChibithulhu));
         
         //El sopor de Dunwich
+        BadConsequence bDunwich = new BadConsequence("El primordial bostezo "
+                + "contagioso. Pierdes el calzado visible",0,new ArrayList(
+                Arrays.asList(TreasureKind.SHOES)),null);
+        Prize pDunwich = new Prize(1,1);
+        monstruos.add(new Monster("El sopor de Dunwich",2,bDunwich,pDunwich));
+        
         
         //Los hondos
         
