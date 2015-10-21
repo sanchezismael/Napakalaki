@@ -30,13 +30,6 @@ public class PruebaNapakalaki {
         
         ArrayList<Monster>monstruos = new ArrayList();
         
-        //El rey de rosa
-        BadConsequence badReyRosa = new BadConsequence("Pierdes 5 niveles y 3 "
-                + "tesoros visibles",
-        5,3,0);
-        Prize prizeReyRosa = new Prize(4,2);
-        monstruos.add(new Monster("El rey de rosa",13,badReyRosa,prizeReyRosa));
-        
         //3 Byakhees de bonanza
         BadConsequence badByakhees = new BadConsequence("Pierdes tu armadura "
                 + "visible y otra oculta",0,new ArrayList(Arrays.asList(
@@ -81,22 +74,30 @@ public class PruebaNapakalaki {
         prizeGorronUmbral));
         
         //H.P Munchcraft
-        
         BadConsequence badHP = new BadConsequence("Pierdes la armadura visible",
                 0,new ArrayList(Arrays.asList(TreasureKind.ARMOR)),null);
         Prize prizeHP = new Prize(2,1);
         monstruos.add(new Monster("H.P Munchcraft",6,badHP,prizeHP));
         
+        //Bichgooth
+        BadConsequence badBichgooth = new BadConsequence("Sientes bichos bajo la "
+                + "ropa. Descarta la armadura visible",0,new ArrayList(Arrays.
+                asList(TreasureKind.ARMOR)),null);
+        
+        //El rey de rosa
+        BadConsequence badReyRosa = new BadConsequence("Pierdes 5 niveles y 3 "
+                + "tesoros visibles",
+        5,3,0);
+        Prize prizeReyRosa = new Prize(4,2);
+        monstruos.add(new Monster("El rey de rosa",13,badReyRosa,prizeReyRosa));
         
         //Los hondos
-        
         BadConsequence bCLosHondos = new BadConsequence("Estos monstruos resultan"
                 + "bastante superficiales y te aburren mortalmente. Estas muerto.",true);
         Prize pLosHondos = new Prize(2,1);
         monstruos.add(new Monster("Los hondos",8,bCLosHondos,pLosHondos));
         
         // Familia Feliz
-        
         BadConsequence bCFamiliaFeliz = new BadConsequence("La familia te atrapa. Estas"
                 + " muerto",true);
         Prize pFamiliaFeliz = new Prize(4,1);
