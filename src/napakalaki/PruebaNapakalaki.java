@@ -37,16 +37,6 @@ public class PruebaNapakalaki {
         Prize prizeReyRosa = new Prize(4,2);
         monstruos.add(new Monster("El rey de rosa",13,badReyRosa,prizeReyRosa));
         
-        //Ángeles de la noche ibicenca
-        BadConsequence badAngelesIbicencos = new BadConsequence("Te atrapan para"
-                + " llevarte de fiesta y te dejan caer en mitad del vuela. "
-                + "Descarta 1 mano visible y 1 mano oculata",0, new ArrayList
-                (Arrays.asList(TreasureKind.ONEHAND)),new ArrayList
-                (Arrays.asList(TreasureKind.ONEHAND)));
-        Prize prizeAngelesIbicencos = new Prize(4,1);
-        monstruos.add(new Monster("Angeles de la noche ibicenca",14,badAngelesIbicencos,
-                prizeAngelesIbicencos));
-        
         //3 Byakhees de bonanza
         BadConsequence badByakhees = new BadConsequence("Pierdes tu armadura "
                 + "visible y otra oculta",0,new ArrayList(Arrays.asList(
@@ -69,6 +59,18 @@ public class PruebaNapakalaki {
                 Arrays.asList(TreasureKind.SHOES)),null);
         Prize pDunwich = new Prize(1,1);
         monstruos.add(new Monster("El sopor de Dunwich",2,bDunwich,pDunwich));
+        
+        //Ángeles de la noche ibicenca
+        BadConsequence badAngelesIbicencos = new BadConsequence("Te atrapan para"
+                + " llevarte de fiesta y te dejan caer en mitad del vuela. "
+                + "Descarta 1 mano visible y 1 mano oculata",0, new ArrayList
+                (Arrays.asList(TreasureKind.ONEHAND)),new ArrayList
+                (Arrays.asList(TreasureKind.ONEHAND)));
+        Prize prizeAngelesIbicencos = new Prize(4,1);
+        monstruos.add(new Monster("Angeles de la noche ibicenca",14,badAngelesIbicencos,
+                prizeAngelesIbicencos));
+        
+        
         
         
         //Los hondos
