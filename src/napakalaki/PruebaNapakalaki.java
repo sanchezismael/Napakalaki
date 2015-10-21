@@ -80,6 +80,12 @@ public class PruebaNapakalaki {
         monstruos.add(new Monster("El gorrón en el umbral",10,badGorronUmbral,
         prizeGorronUmbral));
         
+        //H.P Munchcraft
+        
+        BadConsequence badHP = new BadConsequence("Pierdes la armadura visible",
+                0,new ArrayList(Arrays.asList(TreasureKind.ARMOR)),null);
+        Prize prizeHP = new Prize(2,1);
+        monstruos.add(new Monster("H.P Munchcraft",6,badHP,prizeHP));
         
         
         //Los hondos
