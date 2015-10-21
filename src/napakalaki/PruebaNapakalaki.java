@@ -71,6 +71,15 @@ public class PruebaNapakalaki {
                 prizeAngelesIbicencos));
         
         
+        //El gorrón en el umbral
+        BadConsequence badGorronUmbral = new BadConsequence("Pierdes todos tus "
+                + "tesoros visibles",0,new ArrayList(Arrays.asList
+                (TreasureKind.ARMOR,TreasureKind.BOTHHANDS,TreasureKind.HELMET,
+                 TreasureKind.ONEHAND,TreasureKind.SHOES)),null);
+        Prize prizeGorronUmbral = new Prize(3,1);
+        monstruos.add(new Monster("El gorrón en el umbral",10,badGorronUmbral,
+        prizeGorronUmbral));
+        
         
         
         //Los hondos
