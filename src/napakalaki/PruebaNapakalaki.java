@@ -114,6 +114,10 @@ public class PruebaNapakalaki {
         Prize pFamiliaFeliz = new Prize(4,1);
         monstruos.add(new Monster("Familia feliz",1,bCFamiliaFeliz,pFamiliaFeliz));
         
+        //Monstruos Juan
+        
+        
+        
         //El Lenguas
         BadConsequence badLenguas = new BadConsequence("Menudo susto te llevas. "
                 + "Pierdes 2 niveles y 5 tesoros visibles",2,5,0);
