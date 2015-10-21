@@ -22,7 +22,7 @@ public class BadConsequence {
     
     public BadConsequence(String text,int levels,int nVisible,int nHidden){
         this.text = text;
-        this.levels =levels;
+        this.levels = levels;
         this.nVisibleTreasures = nVisible;
         this.nHiddenTreasures = nHidden;
     }

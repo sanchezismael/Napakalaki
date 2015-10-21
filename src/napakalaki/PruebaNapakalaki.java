@@ -40,20 +40,19 @@ public class PruebaNapakalaki {
         monstruos.add(new Monster("3 Byakhees de bonanza",8,badByakhees,
                 prizeByakhees));
         
-        //badChibithulhu
-        BadConsequence badChibithulhu;
-        badChibithulhu = new BadConsequence("Embobados con el "
+        //Chibithulhu
+        BadConsequence badChibithulhu = new BadConsequence("Embobados con el "
                 + "lindo primigenio te descartas de tu casco visible",0,
                 new ArrayList(Arrays.asList(TreasureKind.HELMET)),null);
-        Prize pChibithulhu = new Prize(1,1);
-        monstruos.add(new Monster("Chibithulhu",2,badChibithulhu,pChibithulhu));
+        Prize prizeChibithulhu = new Prize(1,1);
+        monstruos.add(new Monster("Chibithulhu",2,badChibithulhu,prizeChibithulhu));
         
         //El sopor de Dunwich
-        BadConsequence bDunwich = new BadConsequence("El primordial bostezo "
+        BadConsequence badDunwich = new BadConsequence("El primordial bostezo "
                 + "contagioso. Pierdes el calzado visible",0,new ArrayList(
                 Arrays.asList(TreasureKind.SHOES)),null);
-        Prize pDunwich = new Prize(1,1);
-        monstruos.add(new Monster("El sopor de Dunwich",2,bDunwich,pDunwich));
+        Prize prizeDunwich = new Prize(1,1);
+        monstruos.add(new Monster("El sopor de Dunwich",2,badDunwich,prizeDunwich));
         
         //Ángeles de la noche ibicenca
         BadConsequence badAngelesIbicencos = new BadConsequence("Te atrapan para"
@@ -64,7 +63,6 @@ public class PruebaNapakalaki {
         Prize prizeAngelesIbicencos = new Prize(4,1);
         monstruos.add(new Monster("Angeles de la noche ibicenca",14,badAngelesIbicencos,
                 prizeAngelesIbicencos));
-        
         
         //El gorrón en el umbral
         BadConsequence badGorronUmbral = new BadConsequence("Pierdes todos tus "
@@ -103,20 +101,54 @@ public class PruebaNapakalaki {
         prizeTinieblas));
         
         //Los hondos
-        BadConsequence bCLosHondos = new BadConsequence("Estos monstruos resultan"
+        BadConsequence badLosHondos = new BadConsequence("Estos monstruos resultan"
                 + "bastante superficiales y te aburren mortalmente. Estas muerto.",true);
-        Prize pLosHondos = new Prize(2,1);
-        monstruos.add(new Monster("Los hondos",8,bCLosHondos,pLosHondos));
+        Prize prizeLosHondos = new Prize(2,1);
+        monstruos.add(new Monster("Los hondos",8,badLosHondos,prizeLosHondos));
+        
+        // Semillas Cthulhu
+        BadConsequence badSemillasCthulhu = new BadConsequence("Pierdes 2 niveles y 2"
+                + " tesoros ocultos",2,0,2);
+        Prize prizeSemillasCthulhu = new Prize(2,1);
+        monstruos.add(new Monster("Semillas Cthulhu",4,badSemillasCthulhu,prizeSemillasCthulhu));
+        
+        // Dameargo
+        BadConsequence badDameargo = new BadConsequence("Te intentas escaquear. Pierdes"
+                + " una mano visible",0,new ArrayList(
+                Arrays.asList(TreasureKind.ONEHAND)),null);
+        Prize prizeDameargo = new Prize(2,1);
+        monstruos.add(new Monster("Dameargo",1,badDameargo,prizeDameargo));
+        
+        // Pollipólipo volante
+        BadConsequence badPollipolipo = new BadConsequence("Da mucho asquito. Pierdes"
+                + " 3 niveles",3,null,null);
+        Prize prizePollipolipo = new Prize(1,1);
+        monstruos.add(new Monster("Pollipólipo volante",3,badPollipolipo,
+        prizePollipolipo));
+        
+        // Yskhtihyssq-Goth
+        BadConsequence badYskhtihyssq = new BadConsequence("No le hace gracia que"
+                + " pronuncien mal su nombre. Estas muerto.",true);
+        Prize prizeYskhtihyssq = new Prize(3,1);
+        monstruos.add(new Monster("Yskhtihyssq-Goth",12,badYskhtihyssq,prizeYskhtihyssq));
         
         // Familia Feliz
-        BadConsequence bCFamiliaFeliz = new BadConsequence("La familia te atrapa. Estas"
+        BadConsequence badFamiliaFeliz = new BadConsequence("La familia te atrapa. Estas"
                 + " muerto",true);
-        Prize pFamiliaFeliz = new Prize(4,1);
-        monstruos.add(new Monster("Familia feliz",1,bCFamiliaFeliz,pFamiliaFeliz));
+        Prize prizeFamiliaFeliz = new Prize(4,1);
+        monstruos.add(new Monster("Familia feliz",1,badFamiliaFeliz,prizeFamiliaFeliz));
         
-        //Monstruos Juan
+        // Roboggoth
+//        BadConsequence badRoboggoth = new BadConsequence("");
+//        Prize prizeRoboggoth = new Prize(2,1);
+//        monstruos.add(new Monster("Roboggoth",8,badRoboggoth,prizeRoboggoth));
         
-        
+        // El espía
+        BadConsequence badEspia = new BadConsequence("Te asusta en la noche."
+                + " Pierdes un casco visible",0,new ArrayList(
+                Arrays.asList(TreasureKind.HELMET)),null);
+        Prize prizeEspia = new Prize(1,1);
+        monstruos.add(new Monster("El espía",5,badEspia,prizeEspia));
         
         //El Lenguas
         BadConsequence badLenguas = new BadConsequence("Menudo susto te llevas. "
