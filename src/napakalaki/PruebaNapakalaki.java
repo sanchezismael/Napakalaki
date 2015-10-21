@@ -19,14 +19,16 @@ public class PruebaNapakalaki {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+//        
+//        
+//        Prize unPrize = new Prize(3,1);
+//        BadConsequence unBad = new BadConsequence("Pierdes todos tus tesoros "
+//                + "visibles",false);
+//        Monster unMonster = new Monster("El gorrón en el umbral",10,unBad,unPrize);
+//        
+//        System.out.println(unMonster.toString());
         
         
-        Prize unPrize = new Prize(3,1);
-        BadConsequence unBad = new BadConsequence("Pierdes todos tus tesoros "
-                + "visibles",false);
-        Monster unMonster = new Monster("El gorrón en el umbral",10,unBad,unPrize);
-        
-        System.out.println(unMonster.toString());
         
         ArrayList<Monster>monstruos = new ArrayList();
         
@@ -83,6 +85,8 @@ public class PruebaNapakalaki {
         BadConsequence badBichgooth = new BadConsequence("Sientes bichos bajo la "
                 + "ropa. Descarta la armadura visible",0,new ArrayList(Arrays.
                 asList(TreasureKind.ARMOR)),null);
+        Prize prizeBichgooth = new Prize(1,1);
+        monstruos.add(new Monster("Bichgooth",2,badBichgooth,prizeBichgooth));
         
         //El rey de rosa
         BadConsequence badReyRosa = new BadConsequence("Pierdes 5 niveles y 3 "
@@ -110,7 +114,18 @@ public class PruebaNapakalaki {
         Prize pFamiliaFeliz = new Prize(4,1);
         monstruos.add(new Monster("Familia feliz",1,bCFamiliaFeliz,pFamiliaFeliz));
         
-        //Otro Monstruo
+        //El Lenguas
+        BadConsequence badLenguas = new BadConsequence("Menudo susto te llevas. "
+                + "Pierdes 2 niveles y 5 tesoros visibles",2,5,0);
+        Prize prizeLenguas = new Prize(1,1);
+        monstruos.add(new Monster("El Lenguas",20,badLenguas,prizeLenguas));
+        
+        //Bicéfalo
+        BadConsequence badBicefalo = new BadConsequence("Te faltan manos para "
+                + "tanta cabeza. Perdes 3 niveles y tus tesoros visibles de las"
+                + "manos",3,new ArrayList(Arrays.asList(TreasureKind.ONEHAND)),null);
+        Prize prizeBicefalo = new Prize(1,1);
+        monstruos.add(new Monster("Bicéfalo",20,badBicefalo,prizeBicefalo));
     }
     
 }
