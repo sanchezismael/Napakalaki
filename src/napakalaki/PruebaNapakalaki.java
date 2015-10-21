@@ -91,6 +91,13 @@ public class PruebaNapakalaki {
         Prize prizeReyRosa = new Prize(4,2);
         monstruos.add(new Monster("El rey de rosa",13,badReyRosa,prizeReyRosa));
         
+        //Lo que redacta en las tinieblas
+        BadConsequence badTinieblas = new BadConsequence("Toses los pulmones y"
+                + "pierdes 2 niveles",2,null,null);
+        Prize prizeTinieblas = new Prize(1,1);
+        monstruos.add(new Monster("La que redacta en las tinieblas",2,badTinieblas,
+        prizeTinieblas));
+        
         //Los hondos
         BadConsequence bCLosHondos = new BadConsequence("Estos monstruos resultan"
                 + "bastante superficiales y te aburren mortalmente. Estas muerto.",true);
