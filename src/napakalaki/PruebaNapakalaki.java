@@ -139,9 +139,11 @@ public class PruebaNapakalaki {
         monstruos.add(new Monster("Familia feliz",1,badFamiliaFeliz,prizeFamiliaFeliz));
         
         // Roboggoth
-//        BadConsequence badRoboggoth = new BadConsequence("");
-//        Prize prizeRoboggoth = new Prize(2,1);
-//        monstruos.add(new Monster("Roboggoth",8,badRoboggoth,prizeRoboggoth));
+        BadConsequence badRoboggoth = new BadConsequence("La quinta directiva primaria te"
+                + " obliga a perder 2 niveles y un tesoro de 2 manos visible",0,new ArrayList(
+                Arrays.asList(TreasureKind.BOTHHANDS)),null);
+        Prize prizeRoboggoth = new Prize(2,1);
+        monstruos.add(new Monster("Roboggoth",8,badRoboggoth,prizeRoboggoth));
         
         // El espía
         BadConsequence badEspia = new BadConsequence("Te asusta en la noche."
