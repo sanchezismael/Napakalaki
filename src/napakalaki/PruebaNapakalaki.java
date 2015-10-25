@@ -164,6 +164,28 @@ public class PruebaNapakalaki {
                 + "manos",3,new ArrayList(Arrays.asList(TreasureKind.ONEHAND)),null);
         Prize prizeBicefalo = new Prize(1,1);
         monstruos.add(new Monster("Bicéfalo",20,badBicefalo,prizeBicefalo));
+        
+        Monster mons;
+        /*for(int factor = 0;factor<monstruos.size();factor++){
+            mons = monstruos.get(factor);
+            if(mons.getCombatLevel()>10){
+                System.out.println(mons.toString());
+            }           
+        }*/
+        mons = monstruos.get(0);
+        System.out.println(mons.getBadConsequence().getSpecificHiddentreasures().isEmpty()); 
+        int n = 2;
+        for(int i = 0; i < monstruos.size();++i){
+            mons = monstruos.get(i);
+            if(mons.getBadConsequence().getLevels() > 0){
+                if(mons.getBadConsequence().getnHidden() == 0)
+                    if(mons.getBadConsequence().getnVisibleTreasures() == 0)
+                        if(mons.getBadConsequence().getSpecificHiddentreasures().size() < 1)
+                            if(mons.getBadConsequence().getSpecificVisibletreasures().isEmpty() == true)
+                                System.out.println(mons.toString());
+            }
+        }
     }
+    
     
 }

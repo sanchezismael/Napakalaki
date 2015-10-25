@@ -29,9 +29,17 @@ public class Monster {
         return combatLevel;
     }
     
+    Prize getPrize(){
+        return unPrize;
+    }
+    
+    BadConsequence getBadConsequence(){
+        return unBad;
+    }
+    
     public String toString(){
-        return "Name= "+name+" CombatLevel= "+Integer.toString(combatLevel)+
-                " Prize= "+unPrize.toString()+" BadConsequence= "+
+        return "Name= "+name+", CombatLevel= "+Integer.toString(combatLevel)+
+                ", Prize= "+unPrize.toString()+", BadConsequence= "+
                 unBad.toString();
     }
 }

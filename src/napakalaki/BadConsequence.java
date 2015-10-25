@@ -53,6 +53,18 @@ public class BadConsequence {
         return nVisibleTreasures;
     }
     
+    boolean getDeath(){
+        return death;
+    }
+    
+    ArrayList getSpecificHiddentreasures(){
+        return specificHiddenTreasures;
+    }
+    
+    ArrayList getSpecificVisibletreasures(){
+        return specificHiddenTreasures;
+    }
+    
     public String toString(){
         return "Text= "+text+" Levels= "+Integer.toString(levels)+" nHiddenTreasures= "+
                 Integer.toString(nHiddenTreasures)+" nVisibleTreasures= "+
