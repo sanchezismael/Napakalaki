@@ -161,7 +161,7 @@ public class PruebaNapakalaki {
         //Bicéfalo
         BadConsequence badBicefalo = new BadConsequence("Te faltan manos para "
                 + "tanta cabeza. Perdes 3 niveles y tus tesoros visibles de las"
-                + "manos",3,new ArrayList(Arrays.asList(TreasureKind.ONEHAND)),null);
+                + "manos",3,new ArrayList(Arrays.asList(TreasureKind.BOTHHANDS)),null);
         Prize prizeBicefalo = new Prize(1,1);
         monstruos.add(new Monster("Bicéfalo",20,badBicefalo,prizeBicefalo));
         
@@ -172,18 +172,26 @@ public class PruebaNapakalaki {
                 System.out.println(mons.toString());
             }           
         }*/
-        mons = monstruos.get(0);
-        System.out.println(mons.getBadConsequence().getSpecificHiddentreasures().isEmpty()); 
-        int n = 2;
-        for(int i = 0; i < monstruos.size();++i){
+
+        for(int i = 0; i < monstruos.size();i++){
+            System.out.println(i);
             mons = monstruos.get(i);
             if(mons.getBadConsequence().getLevels() > 0){
-                if(mons.getBadConsequence().getnHidden() == 0)
-                    if(mons.getBadConsequence().getnVisibleTreasures() == 0)
-                        if(mons.getBadConsequence().getSpecificHiddentreasures().size() < 1)
-                            if(mons.getBadConsequence().getSpecificVisibletreasures().isEmpty() == true)
+                if(mons.getBadConsequence().getnHidden() == 0){
+                    if(mons.getBadConsequence().getnVisibleTreasures() == 0){
+                        if(mons.getBadConsequence().getSpecificHiddentreasures() == null){
+                            if(mons.getBadConsequence().getSpecificVisibletreasures() == null){
                                 System.out.println(mons.toString());
+                            }
+                        }
+                    }
+                }
             }
+        }
+        
+        for(Monster monst : monstruos){
+            if(monst.getPrize().getLevel()>1)
+                System.out.println(monst.toString());
         }
     }
     

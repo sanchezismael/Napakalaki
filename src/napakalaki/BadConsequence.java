@@ -62,7 +62,7 @@ public class BadConsequence {
     }
     
     ArrayList getSpecificVisibletreasures(){
-        return specificHiddenTreasures;
+        return specificVisibleTreasures;
     }
     
     public String toString(){
