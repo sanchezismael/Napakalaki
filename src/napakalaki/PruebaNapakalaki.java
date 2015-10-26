@@ -66,9 +66,7 @@ public class PruebaNapakalaki {
         
         //El gorrón en el umbral
         BadConsequence badGorronUmbral = new BadConsequence("Pierdes todos tus "
-                + "tesoros visibles",0,new ArrayList(Arrays.asList
-                (TreasureKind.ARMOR,TreasureKind.BOTHHANDS,TreasureKind.HELMET,
-                 TreasureKind.ONEHAND,TreasureKind.SHOES)),null);
+                + "tesoros visibles",0,5,0);
         Prize prizeGorronUmbral = new Prize(3,1);
         monstruos.add(new Monster("El gorrón en el umbral",10,badGorronUmbral,
         prizeGorronUmbral));
@@ -165,17 +163,19 @@ public class PruebaNapakalaki {
         Prize prizeBicefalo = new Prize(1,1);
         monstruos.add(new Monster("Bicéfalo",20,badBicefalo,prizeBicefalo));
         
-        Monster mons;
-        /*for(int factor = 0;factor<monstruos.size();factor++){
-            mons = monstruos.get(factor);
+        
+        
+        System.out.println("Tienen un nivel de combate superior a 10");
+        for(int i = 0;i<monstruos.size();i++){
+            Monster mons = monstruos.get(i);
             if(mons.getCombatLevel()>10){
                 System.out.println(mons.toString());
             }           
-        }*/
-
-        for(int i = 0; i < monstruos.size();i++){
-            System.out.println(i);
-            mons = monstruos.get(i);
+        }
+        
+        System.out.println("\n\n");
+        System.out.println("Tengan un mal rollo que implique sólo pérdida de niveles.");
+        for(Monster mons : monstruos){
             if(mons.getBadConsequence().getLevels() > 0){
                 if(mons.getBadConsequence().getnHidden() == 0){
                     if(mons.getBadConsequence().getnVisibleTreasures() == 0){
@@ -189,8 +189,18 @@ public class PruebaNapakalaki {
             }
         }
         
+        
+        System.out.println("\n\n");
+        System.out.println("Su buen rollo indique una ganancia de niveles superior a 1.");
         for(Monster monst : monstruos){
             if(monst.getPrize().getLevel()>1)
+                System.out.println(monst.toString());
+        }
+        
+        System.out.println("\n\n");
+        System.out.println("Su mal rollo suponga la pérdida de un determinado tipo de tesoros ya sea visibles y/o ocultos.");
+        for(Monster monst : monstruos){
+            if(monst.getBadConsequence().getSpecificHiddentreasures() != null || monst.getBadConsequence().getSpecificVisibletreasures() != null)
                 System.out.println(monst.toString());
         }
     }

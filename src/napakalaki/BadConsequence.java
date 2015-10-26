@@ -17,8 +17,8 @@ public class BadConsequence {
     private int nVisibleTreasures;
     private int nHiddenTreasures;
     private boolean death;
-    private ArrayList<TreasureKind> specificHiddenTreasures = new ArrayList();
-    private ArrayList<TreasureKind> specificVisibleTreasures = new ArrayList();
+    private ArrayList<TreasureKind> specificHiddenTreasures = null;
+    private ArrayList<TreasureKind> specificVisibleTreasures = null;
     
     public BadConsequence(String text,int levels,int nVisible,int nHidden){
         this.text = text;
@@ -68,6 +68,8 @@ public class BadConsequence {
     public String toString(){
         return "Text= "+text+" Levels= "+Integer.toString(levels)+" nHiddenTreasures= "+
                 Integer.toString(nHiddenTreasures)+" nVisibleTreasures= "+
-                Integer.toString(nVisibleTreasures)+" Death= "+ Boolean.toString(death);
+                Integer.toString(nVisibleTreasures)+" Death= "+ Boolean.toString(death)+
+                "specificVisibleTreasures= "+specificVisibleTreasures+" specificsHiddenTreasures= "
+                +specificHiddenTreasures;
     }
 }
