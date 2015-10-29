@@ -43,14 +43,14 @@ public class PruebaNapakalaki {
         //Chibithulhu
         BadConsequence badChibithulhu = new BadConsequence("Embobados con el "
                 + "lindo primigenio te descartas de tu casco visible",0,
-                new ArrayList(Arrays.asList(TreasureKind.HELMET)),null);
+                new ArrayList(Arrays.asList(TreasureKind.HELMET)),new ArrayList());
         Prize prizeChibithulhu = new Prize(1,1);
         monstruos.add(new Monster("Chibithulhu",2,badChibithulhu,prizeChibithulhu));
         
         //El sopor de Dunwich
         BadConsequence badDunwich = new BadConsequence("El primordial bostezo "
                 + "contagioso. Pierdes el calzado visible",0,new ArrayList(
-                Arrays.asList(TreasureKind.SHOES)),null);
+                Arrays.asList(TreasureKind.SHOES)),new ArrayList());
         Prize prizeDunwich = new Prize(1,1);
         monstruos.add(new Monster("El sopor de Dunwich",2,badDunwich,prizeDunwich));
         
@@ -73,14 +73,14 @@ public class PruebaNapakalaki {
         
         //H.P Munchcraft
         BadConsequence badHP = new BadConsequence("Pierdes la armadura visible",
-                0,new ArrayList(Arrays.asList(TreasureKind.ARMOR)),null);
+                0,new ArrayList(Arrays.asList(TreasureKind.ARMOR)),new ArrayList());
         Prize prizeHP = new Prize(2,1);
         monstruos.add(new Monster("H.P Munchcraft",6,badHP,prizeHP));
         
         //Bichgooth
         BadConsequence badBichgooth = new BadConsequence("Sientes bichos bajo la "
                 + "ropa. Descarta la armadura visible",0,new ArrayList(Arrays.
-                asList(TreasureKind.ARMOR)),null);
+                asList(TreasureKind.ARMOR)),new ArrayList());
         Prize prizeBichgooth = new Prize(1,1);
         monstruos.add(new Monster("Bichgooth",2,badBichgooth,prizeBichgooth));
         
@@ -93,7 +93,7 @@ public class PruebaNapakalaki {
         
         //Lo que redacta en las tinieblas
         BadConsequence badTinieblas = new BadConsequence("Toses los pulmones y"
-                + "pierdes 2 niveles",2,null,null);
+                + "pierdes 2 niveles",2,0,0);
         Prize prizeTinieblas = new Prize(1,1);
         monstruos.add(new Monster("La que redacta en las tinieblas",2,badTinieblas,
         prizeTinieblas));
@@ -113,13 +113,13 @@ public class PruebaNapakalaki {
         // Dameargo
         BadConsequence badDameargo = new BadConsequence("Te intentas escaquear. Pierdes"
                 + " una mano visible",0,new ArrayList(
-                Arrays.asList(TreasureKind.ONEHAND)),null);
+                Arrays.asList(TreasureKind.ONEHAND)),new ArrayList());
         Prize prizeDameargo = new Prize(2,1);
         monstruos.add(new Monster("Dameargo",1,badDameargo,prizeDameargo));
         
         // Pollipólipo volante
         BadConsequence badPollipolipo = new BadConsequence("Da mucho asquito. Pierdes"
-                + " 3 niveles",3,null,null);
+                + " 3 niveles",3,0,0);
         Prize prizePollipolipo = new Prize(1,1);
         monstruos.add(new Monster("Pollipólipo volante",3,badPollipolipo,
         prizePollipolipo));
@@ -139,14 +139,14 @@ public class PruebaNapakalaki {
         // Roboggoth
         BadConsequence badRoboggoth = new BadConsequence("La quinta directiva primaria te"
                 + " obliga a perder 2 niveles y un tesoro de 2 manos visible",0,new ArrayList(
-                Arrays.asList(TreasureKind.BOTHHANDS)),null);
+                Arrays.asList(TreasureKind.BOTHHANDS)),new ArrayList());
         Prize prizeRoboggoth = new Prize(2,1);
         monstruos.add(new Monster("Roboggoth",8,badRoboggoth,prizeRoboggoth));
         
         // El espía
         BadConsequence badEspia = new BadConsequence("Te asusta en la noche."
                 + " Pierdes un casco visible",0,new ArrayList(
-                Arrays.asList(TreasureKind.HELMET)),null);
+                Arrays.asList(TreasureKind.HELMET)),new ArrayList());
         Prize prizeEspia = new Prize(1,1);
         monstruos.add(new Monster("El espía",5,badEspia,prizeEspia));
         
@@ -159,29 +159,29 @@ public class PruebaNapakalaki {
         //Bicéfalo
         BadConsequence badBicefalo = new BadConsequence("Te faltan manos para "
                 + "tanta cabeza. Perdes 3 niveles y tus tesoros visibles de las"
-                + "manos",3,new ArrayList(Arrays.asList(TreasureKind.BOTHHANDS)),null);
+                + "manos",3,new ArrayList(Arrays.asList(TreasureKind.BOTHHANDS)),new ArrayList());
         Prize prizeBicefalo = new Prize(1,1);
         monstruos.add(new Monster("Bicéfalo",20,badBicefalo,prizeBicefalo));
         
         
-        
-        System.out.println("Tienen un nivel de combate superior a 10");
-        for(int i = 0;i<monstruos.size();i++){
-            Monster mons = monstruos.get(i);
-            if(mons.getCombatLevel()>10){
-                System.out.println(mons.toString());
-            }           
-        }
-        
+//        
+//        System.out.println("Tienen un nivel de combate superior a 10");
+//        for(int i = 0;i<monstruos.size();i++){
+//            Monster mons = monstruos.get(i);
+//            if(mons.getCombatLevel()>10){
+//                System.out.println(mons.toString());
+//            }           
+//        }
         System.out.println("\n\n");
         System.out.println("Tengan un mal rollo que implique sólo pérdida de niveles.");
         for(Monster mons : monstruos){
             if(mons.getBadConsequence().getLevels() > 0){
                 if(mons.getBadConsequence().getnHidden() == 0){
                     if(mons.getBadConsequence().getnVisibleTreasures() == 0){
-                        if(mons.getBadConsequence().getSpecificHiddentreasures() == null){
-                            if(mons.getBadConsequence().getSpecificVisibletreasures() == null){
+                        if(mons.getBadConsequence().getSpecificHiddentreasures().size() == 0){
+                            if(mons.getBadConsequence().getSpecificVisibletreasures().size() == 0){
                                 System.out.println(mons.toString());
+                        System.out.println(mons.getBadConsequence().getSpecificVisibletreasures().isEmpty());
                             }
                         }
                     }
@@ -190,20 +190,20 @@ public class PruebaNapakalaki {
         }
         
         
-        System.out.println("\n\n");
-        System.out.println("Su buen rollo indique una ganancia de niveles superior a 1.");
-        for(Monster monst : monstruos){
-            if(monst.getPrize().getLevel()>1)
-                System.out.println(monst.toString());
-        }
-        
-        System.out.println("\n\n");
-        System.out.println("Su mal rollo suponga la pérdida de un determinado tipo de tesoros ya sea visibles y/o ocultos.");
-        for(Monster monst : monstruos){
-            if(monst.getBadConsequence().getSpecificHiddentreasures() != null || monst.getBadConsequence().getSpecificVisibletreasures() != null)
-                System.out.println(monst.toString());
-        }
+//        System.out.println("\n\n");
+//        System.out.println("Su buen rollo indique una ganancia de niveles superior a 1.");
+//        for(Monster monst : monstruos){
+//            if(monst.getPrize().getLevel()>1)
+//                System.out.println(monst.toString());
+//        }
+//        
+//        System.out.println("\n\n");
+//        System.out.println("Su mal rollo suponga la pérdida de un determinado tipo de tesoros ya sea visibles y/o ocultos.");
+//        for(Monster monst : monstruos){
+//            if(monst.getBadConsequence().getSpecificHiddentreasures() != null || monst.getBadConsequence().getSpecificVisibletreasures() != null)
+//                System.out.println(monst.toString());
+//        }
     }
-    
+//    
     
 }
