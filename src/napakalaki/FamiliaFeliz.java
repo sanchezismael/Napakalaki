@@ -41,15 +41,7 @@ public class FamiliaFeliz {
         media = media / contador;
         return media;
     }
-    
-    public static void main(String[] args) {
-        System.out.println("Hola mundo");
-        
-        FamiliaFeliz una_familia = new FamiliaFeliz("5 primeros", new ArrayList());
-        System.out.println(monst.toString());
-        
-        
-    }
+
 
 }
 
