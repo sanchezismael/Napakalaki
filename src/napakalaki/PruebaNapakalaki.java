@@ -221,31 +221,7 @@ public class PruebaNapakalaki {
                 System.out.println(monst.toString());
         }
         
-        
-        /////////////////////////////////////////////////////////
-        //
-        // PRUEBA DE LA CLASE FAMILIA FELIZ
-        //
-        /////////////////////////////////////////////////////////      
-        
-        FamiliaFeliz unafamilia = new FamiliaFeliz("5 primeros", new ArrayList());
-        
-        boolean mons1 = unafamilia.incluirMiembro(monstruos.get(0));
-        boolean mons2 = unafamilia.incluirMiembro(monstruos.get(1));
-        boolean mons3 = unafamilia.incluirMiembro(monstruos.get(2));
-        boolean mons4 = unafamilia.incluirMiembro(monstruos.get(3));
-        boolean mons5 = unafamilia.incluirMiembro(monstruos.get(4));
-        boolean mons6 = unafamilia.incluirMiembro(monstruos.get(5));
-
-        float media = unafamilia.nivelMedio();
-        
-        System.out.println(mons1);
-        System.out.println(mons2);
-        System.out.println(mons3);
-        System.out.println(mons4);
-        System.out.println(mons5);
-        System.out.println(mons6);
-        System.out.println(media);
+       
         
     }
 //    
