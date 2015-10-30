@@ -7,8 +7,10 @@ package napakalaki;
 
 /**
  *
- * @author Ismael
+ * @author Ismael Sánchez y Juan Manuel Fajardo
+ * 
  */
+
 public class Prize {
     private int treasures;
     private int level;

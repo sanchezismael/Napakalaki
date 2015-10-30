@@ -9,8 +9,10 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Ismael
+ * @author Ismael Sánchez y Juan Manuel Fajardo
+ * 
  */
+
 public class BadConsequence {
     private String text;
     private int levels;

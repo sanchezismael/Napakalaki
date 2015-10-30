@@ -10,8 +10,10 @@ import java.util.Arrays;
 
 /**
  *
- * @author Ismael
+ * @author Ismael Sánchez y Juan Manuel Fajardo
+ * 
  */
+
 public class PruebaNapakalaki {
 
     /**
@@ -164,16 +166,27 @@ public class PruebaNapakalaki {
         monstruos.add(new Monster("Bicéfalo",20,badBicefalo,prizeBicefalo));
         
         
-//        
-//        System.out.println("Tienen un nivel de combate superior a 10");
-//        for(int i = 0;i<monstruos.size();i++){
-//            Monster mons = monstruos.get(i);
-//            if(mons.getCombatLevel()>10){
-//                System.out.println(mons.toString());
-//            }           
-//        }
+        /////////////////////////////////////////////////////////
+        //
+        // BATERÍA DE PRUEBAS - JAVA
+        //
+        ///////////////////////////////////////////////////////// 
+        
+        
+        // Mostrar los monstruos que tienen un nivel de combate superior a 10
+        
+        System.out.println("Tienen un nivel de combate superior a 10.\n");
+        for(int i = 0;i<monstruos.size();i++){
+            Monster mons = monstruos.get(i);
+            if(mons.getCombatLevel()>10){
+                System.out.println(mons.toString());
+            }           
+        }
+        
+        // Mostrar los monstruos que tengan un mal rollo que implique sólo pérdida de niveles
+        
         System.out.println("\n\n");
-        System.out.println("Tengan un mal rollo que implique sólo pérdida de niveles.");
+        System.out.println("Tengan un mal rollo que implique sólo pérdida de niveles.\n");
         for(Monster mons : monstruos){
             if(mons.getBadConsequence().getLevels() > 0){
                 if(mons.getBadConsequence().getnHidden() == 0){
@@ -189,23 +202,31 @@ public class PruebaNapakalaki {
             }
         }
         
+        // Mostrar los monstruos cuyo buen rollo indique una ganancia de niveles superior a 1
         
-//        System.out.println("\n\n");
-//        System.out.println("Su buen rollo indique una ganancia de niveles superior a 1.");
-//        for(Monster monst : monstruos){
-//            if(monst.getPrize().getLevel()>1)
-//                System.out.println(monst.toString());
-//        }
-//        
-//        System.out.println("\n\n");
-//        System.out.println("Su mal rollo suponga la pérdida de un determinado tipo de tesoros ya sea visibles y/o ocultos.");
-//        for(Monster monst : monstruos){
-//            if(monst.getBadConsequence().getSpecificHiddentreasures() != null || monst.getBadConsequence().getSpecificVisibletreasures() != null)
-//                System.out.println(monst.toString());
-//        }
+        System.out.println("\n\n");
+        System.out.println("Su buen rollo indique una ganancia de niveles superior a 1.\n");
+        for(Monster monst : monstruos){
+            if(monst.getPrize().getLevel()>1)
+                System.out.println(monst.toString());
+        }
+        
+        // Mostrar los monstruos cuyo mal rollo suponga la pérdidas de un determinado tipo de tesoros, ya sea
+        // visibles y/u ocultos
+        
+        System.out.println("\n\n");
+        System.out.println("Su mal rollo suponga la pérdida de un determinado tipo de tesoros ya sea visibles y/o ocultos.\n");
+        for(Monster monst : monstruos){
+            if(monst.getBadConsequence().getSpecificHiddentreasures() != null || monst.getBadConsequence().getSpecificVisibletreasures() != null)
+                System.out.println(monst.toString());
+        }
         
         
-        System.out.println("Hola mundo");
+        /////////////////////////////////////////////////////////
+        //
+        // PRUEBA DE LA CLASE FAMILIA FELIZ
+        //
+        /////////////////////////////////////////////////////////      
         
         FamiliaFeliz unafamilia = new FamiliaFeliz("5 primeros", new ArrayList());
         
@@ -217,6 +238,7 @@ public class PruebaNapakalaki {
         boolean mons6 = unafamilia.incluirMiembro(monstruos.get(5));
 
         float media = unafamilia.nivelMedio();
+        
         System.out.println(mons1);
         System.out.println(mons2);
         System.out.println(mons3);
@@ -224,8 +246,6 @@ public class PruebaNapakalaki {
         System.out.println(mons5);
         System.out.println(mons6);
         System.out.println(media);
-
-
         
     }
 //    

@@ -7,8 +7,10 @@ package napakalaki;
 
 /**
  *
- * @author Ismael
+ * @author Ismael Sánchez y Juan Manuel Fajardo
+ * 
  */
+
 public class Monster {
     private String name;
     private int combatLevel;
