@@ -7,7 +7,7 @@ package napakalaki;
 
 /**
  *
- * @author Ismael
+ * @author Ismael Sánchez y Juan Manuel Fajardo
  */
 public class Treasure {
     private String name;

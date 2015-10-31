@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Ismael y Juan
+ * @author Ismael Sánchez y Juan Manuel Fajardo
  */
 public class Napakalaki {
     private static final Napakalaki instance = new Napakalaki();
