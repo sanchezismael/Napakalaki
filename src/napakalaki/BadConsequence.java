@@ -14,6 +14,7 @@ import java.util.ArrayList;
  */
 
 public class BadConsequence {
+    static final int MAXTREASURES = 10;
     private String text;
     private int levels;
     private int nVisibleTreasures;
@@ -54,29 +55,48 @@ public class BadConsequence {
         this.nHiddenTreasures = 0;
     }
     
-    String getText(){
-        return text;
+    public boolean isEmpty(){
+        
     }
-    int getLevels(){
+    
+    public int getLevels(){
         return levels;
     }
-    int getnHidden(){
-        return nHiddenTreasures;
-    }
-    int getnVisibleTreasures(){
+    
+    public int getNVisibleTreasures(){
         return nVisibleTreasures;
     }
     
-    boolean getDeath(){
+    public int getNHiddenTreasures(){
+        return nHiddenTreasures;
+    }
+    
+    public void substractVisibleTreasure(TreasureKind t){
+        
+    }
+    
+    public void substractHiddenTreasure(TreasureKind t){
+        
+    }
+    
+    public String getText(){
+        return text;
+    }
+    
+    public boolean getDeath(){
         return death;
     }
     
-    ArrayList getSpecificHiddentreasures(){
+    public ArrayList<TreasureKind> getSpecificHiddentreasures(){
         return specificHiddenTreasures;
     }
     
-    ArrayList getSpecificVisibletreasures(){
+    public ArrayList<TreasureKind> getSpecificVisibletreasures(){
         return specificVisibleTreasures;
+    }
+    
+    public BadConsequence adjustToFitTreasureLists(ArrayList<TreasureKind> v, ArrayList<TreasureKind> h){
+        
     }
     
     public String toString(){
