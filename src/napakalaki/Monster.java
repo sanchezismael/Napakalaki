@@ -17,26 +17,34 @@ public class Monster {
     private Prize unPrize;
     private BadConsequence unBad;
     
-    Monster(String name, int level,BadConsequence bc,Prize price){
+    public Monster(String name, int level,BadConsequence bc,Prize price){
         this.name = name;
         this.combatLevel = level;
         this.unPrize = price;
         this.unBad = bc;
     }
     
-    String getName(){
+    public String getName(){
        return name;
     }
-    int getCombatLevel(){
+    public int getCombatLevel(){
         return combatLevel;
     }
     
-    Prize getPrize(){
-        return unPrize;
+//    public Prize getPrize(){          //este método no viene en el diagrama de clases
+//        return unPrize;
+//    }
+    
+    public BadConsequence getBadConsequence(){
+        return unBad;
     }
     
-    BadConsequence getBadConsequence(){
-        return unBad;
+    public int LevelsGained(){
+        
+    }
+    
+    public int getTreasuresGained(){
+        
     }
     
     public String toString(){

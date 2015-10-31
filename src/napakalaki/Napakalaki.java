@@ -18,6 +18,10 @@ public class Napakalaki {
     private Napakalaki(){
         
     }
+    private Monster currentMonster;
+    private CardDealer dealer;
+    private Player players;
+    private Player currentPlayer;
     
     private void initPlayers(ArrayList<String> names){
         
