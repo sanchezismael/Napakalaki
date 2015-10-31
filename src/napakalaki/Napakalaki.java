@@ -23,9 +23,9 @@ public class Napakalaki {
         
     }
     
-//    Player nextPlayer(){
-//        
-//    }
+    Player nextPlayer(){
+        
+    }
     
     private boolean nextTurnAllowed(){
         return true;
@@ -50,5 +50,30 @@ public class Napakalaki {
     public void discardHiddenTreasures(ArrayList<TreasureKind> treasures){
         
     }
+    
+    public void makeTreasuresVisible(ArrayList<TreasureKind> treasures){
+        
+    }
+    
+    public void initGame(ArrayList<String> players){
+        
+    }
+    
+    public Player getCurrentPlayer(){
+    
+    }
+    
+    public Monster getCurrentMonster(){
+        
+    }
+    
+    public boolean nextTurn(){
+        
+    }
+    
+    public boolean endOfGame(CombatResult result){
+        
+    }
+    
     
 }
