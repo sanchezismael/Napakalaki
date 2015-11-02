@@ -5,6 +5,8 @@
  */
 package napakalaki;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author jmfajardo
@@ -15,6 +17,11 @@ public class Player{
     private int level;
     private boolean dead = true;
     private boolean canISteal = true;
+    
+    private Player enemy;
+    private ArrayList<Treasure> hiddenTreasures;
+    private ArrayList<Treasure> visibleTreasures;
+    private ArrayList<BadConsequence> pendingBadConsequence;
     
     public Player(String name){
         

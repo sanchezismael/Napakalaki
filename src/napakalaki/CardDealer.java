@@ -5,12 +5,20 @@
  */
 package napakalaki;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author jmfajardo
  */
 public class CardDealer {
     private static final CardDealer instance = new CardDealer();
+    
+    private ArrayList<Treasure> unusedTreasures;
+    private ArrayList<Treasure> usedTreasures;
+    private ArrayList<Monster> unusedMosnters;
+    private ArrayList<Monster> usedMonster;
+    
     private CardDealer(){
         
     }
