@@ -44,13 +44,13 @@ public class BadConsequence {
         
     }
     
-    BadConsequence(String text, int levels, ArrayList<TreasureKind> tVisible,
+    public BadConsequence(String text, int levels, ArrayList<TreasureKind> tVisible,
             ArrayList<TreasureKind> tHidden){
         this.text = text;
         this.levels = levels;
         this.specificHiddenTreasures = tHidden;
         this.specificVisibleTreasures = tVisible;
-        this.death = death;
+        this.death = false;
         this.nVisibleTreasures = 0;
         this.nHiddenTreasures = 0;
     }
