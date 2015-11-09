@@ -39,12 +39,12 @@ public class Monster {
         return unBad;
     }
     
-    public int LevelsGained(){
-        
+    public int getLevelsGained(){
+        return unPrize.getLevel();
     }
     
     public int getTreasuresGained(){
-        
+        return unPrize.getTreasures();
     }
     
     public String toString(){

@@ -16,10 +16,13 @@ public class Dice {
     }
     
     public final Dice getInstance(){
-       
+       return null;
     }
     
     public int nextNumber(){
-        
+        return (int)(Math.random()*6 + 1);
     }
+    
+    
 }
+    
