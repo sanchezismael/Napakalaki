@@ -98,6 +98,7 @@ public class BadConsequence {
     }
     
     public BadConsequence adjustToFitTreasureLists(ArrayList<TreasureKind> v, ArrayList<TreasureKind> h){
+        return null;
         
     }
     

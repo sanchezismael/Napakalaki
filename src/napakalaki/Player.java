@@ -62,6 +62,7 @@ public class Player{
         
     }
     private boolean canMakeTreasureVisible(Treasure t){
+        return false;
         
     }
     private int howManyVisibleTreasures(TreasureKind tKind){
@@ -81,12 +82,15 @@ public class Player{
         return dead;
     }
     public ArrayList<Treasure> getHiddenTreasures(){
+        return null;
         
     }
     public ArrayList<Treasure> getVisibleTreasures(){
+        return null;
         
     }
     public CombatResult combat(Monster m){
+        return null;
         
     }
     public void makeTreasureVisible(Treasure t){
@@ -111,12 +115,14 @@ public class Player{
         return level;
     }
     public Treasure stealITreasure(){
+        return null;
         
     }
     public void setEnemy(Player enemy){
         this.enemy=enemy;
     }
     private Treasure giveMeATreasure(){
+        return null;
         
     }
     public boolean canISteal(){

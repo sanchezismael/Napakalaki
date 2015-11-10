@@ -208,9 +208,11 @@ public class CardDealer {
         return instance;
     }
     public Treasure nextTreasure(){
+        return null;
         
     }
     public Monster nextMonster(){
+        return null;
         
     }
     public void giveTreasureBack(Treasure t){

@@ -11,8 +11,7 @@ package napakalaki;
  */
 public class Dice {
     private static final Dice instance = new Dice();
-    private Dice(){
-        
+    private Dice(){       
     }
     
     public final Dice getInstance(){

@@ -15,19 +15,25 @@ import java.util.ArrayList;
  */
 public class Napakalaki {
     private static final Napakalaki instance = new Napakalaki();
-    private Napakalaki(){
-        
-    }
+    
     private Monster currentMonster;
     private CardDealer dealer;
     private Player players;
     private Player currentPlayer;
+    
+    private Napakalaki(){
+        currentMonster = null;
+        dealer = null;
+        players = null;
+        currentPlayer = null;
+    }
     
     private void initPlayers(ArrayList<String> names){
         
     }
     
     Player nextPlayer(){
+        return null;
         
     }
     
@@ -44,6 +50,7 @@ public class Napakalaki {
     }
     
     public CombatResult developCombat(){
+        return null;
         
     }
     
@@ -64,18 +71,22 @@ public class Napakalaki {
     }
     
     public Player getCurrentPlayer(){
+        return null;
     
     }
     
     public Monster getCurrentMonster(){
+        return null;
         
     }
     
     public boolean nextTurn(){
+        return false;
         
     }
     
     public boolean endOfGame(CombatResult result){
+        return false;
         
     }
     
