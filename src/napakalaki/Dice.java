@@ -12,10 +12,10 @@ package napakalaki;
 public class Dice {
     private static final Dice instance = new Dice();
     private Dice(){       
-    }
+    }                       //se pone algo?
     
-    public final Dice getInstance(){
-       return null;
+    public static Dice getInstance(){
+       return instance;
     }
     
     public int nextNumber(){

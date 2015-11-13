@@ -13,21 +13,22 @@ package napakalaki;
 
 public class Prize {
     private int treasures;
-    private int level;
-    public Prize(int treasures, int level){
-        this.treasures = treasures;
-        this.level = level;
+    private int levels;
+    
+    public Prize(int t, int l){
+        treasures = t;
+        levels = l;
     }
     public int getTreasures(){
         return treasures;
     }
     public int getLevel(){
-        return level;
+        return levels;
     }
 
     public String toString(){
         return "Treasures= "+ Integer.toString(treasures) + " levels= "
-                +Integer.toString(level);
+                +Integer.toString(levels);
     }
 }
     

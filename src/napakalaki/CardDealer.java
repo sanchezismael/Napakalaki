@@ -16,10 +16,10 @@ import java.util.Collections;
 public class CardDealer {
     private static final CardDealer instance = new CardDealer();
     
-    private ArrayList<Treasure> unusedTreasures = new ArrayList();
-    private ArrayList<Treasure> usedTreasures = new ArrayList();
-    private ArrayList<Monster> unusedMonsters = new ArrayList();
-    private ArrayList<Monster> usedMonsters = new ArrayList();
+    private ArrayList<Treasure> unusedTreasures;
+    private ArrayList<Treasure> usedTreasures;
+    private ArrayList<Monster> unusedMonsters;
+    private ArrayList<Monster> usedMonsters;
     
     
 
@@ -212,8 +212,7 @@ public class CardDealer {
         
     }
     public Monster nextMonster(){
-        return null;
-        
+        return null;      
     }
     public void giveTreasureBack(Treasure t){
         usedTreasures.add(t);
@@ -225,4 +224,19 @@ public class CardDealer {
         
     }
     
+    
+    //PRUEBA EXAMEN--------
+    public Monster getMayMons(){
+        initMonsterCardDeck();
+        int i = 0;
+        int level = 0;
+        for (int j = 0; j < unusedMonsters.size(); j++) {
+            if (level < unusedMonsters.get(j).getCombatLevel()){
+                i = j;
+        }
+        }
+        return unusedMonsters.get(i);
+    }
+    
+    //---------------------
 }

@@ -15,7 +15,9 @@ public class Treasure {
     private TreasureKind type;
     
     public Treasure(String n, int bonus, TreasureKind t){
-        
+        name = n;
+        this.bonus = bonus;
+        type = t;
     }
     
     public String getName(){

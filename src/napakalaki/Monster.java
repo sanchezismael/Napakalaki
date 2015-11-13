@@ -17,11 +17,11 @@ public class Monster {
     private Prize unPrize;
     private BadConsequence unBad;
     
-    public Monster(String name, int level,BadConsequence bc,Prize price){
-        this.name = name;
-        this.combatLevel = level;
-        this.unPrize = price;
-        this.unBad = bc;
+    public Monster(String n, int l,BadConsequence b,Prize p){
+        name = n;
+        combatLevel = l;
+        unPrize = p;
+        unBad = b;
     }
     
     public String getName(){

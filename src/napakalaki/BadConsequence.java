@@ -73,11 +73,11 @@ public class BadConsequence {
         return nHiddenTreasures;
     }
     
-    public void substractVisibleTreasure(TreasureKind t){
+    public void substractVisibleTreasure(Treasure t){
         
     }
     
-    public void substractHiddenTreasure(TreasureKind t){
+    public void substractHiddenTreasure(Treasure t){
         
     }
     
@@ -97,7 +97,7 @@ public class BadConsequence {
         return specificVisibleTreasures;
     }
     
-    public BadConsequence adjustToFitTreasureLists(ArrayList<TreasureKind> v, ArrayList<TreasureKind> h){
+    public BadConsequence adjustToFitTreasureLists(ArrayList<Treasure> v, ArrayList<Treasure> h){
         return null;
         
     }

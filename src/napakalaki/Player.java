@@ -14,10 +14,9 @@ import java.util.ArrayList;
 public class Player{
     static final int MAXLEVEL = 10;
     private String name;
-    private int level = 1;
-    private boolean dead = true;
-    private boolean canISteal = true;
-    
+    private int level;
+    private boolean dead;
+    private boolean canISteal;   
     private Player enemy;
     private ArrayList<Treasure> hiddenTreasures;
     private ArrayList<Treasure> visibleTreasures;
@@ -25,6 +24,13 @@ public class Player{
     
     public Player(String name){
         this.name = name;
+        level = 1;
+        dead = true;
+        canISteal = true;
+        enemy = null;
+        hiddenTreasures = new ArrayList();
+        visibleTreasures = new ArrayList();
+        pendingBadConsequence = null;
     }
     public String getName(){
         return name;
@@ -41,15 +47,15 @@ public class Player{
         
         return level+bonus;
     }
-    private void incrementLevels(int i){
-        level = level + 1;
+    private void incrementLevels(int l){
+        level = level + l;
         if (level>MAXLEVEL)
             level = MAXLEVEL;
     }
-    private void decrementLevels(int i){
-        level = level - 1;
-        if (level < 1)
-            level = 1;
+    private void decrementLevels(int l){
+        level = level - l;
+        if (level < l)
+            level = l;
         
     }
     private void setPendingBadConsequence(BadConsequence b){
@@ -129,12 +135,7 @@ public class Player{
         return canISteal;
     }
     private boolean canYouGiveMeATreasure(){
-        boolean tesoros;
-        if (hiddenTreasures.size() != 0)
-            tesoros = true;
-        else
-            tesoros = false;
-        return tesoros;
+        return !hiddenTreasures.isEmpty();
     }
     private void haveStolen(){
         canISteal = false;
