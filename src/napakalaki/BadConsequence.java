@@ -73,12 +73,26 @@ public class BadConsequence {
         return nHiddenTreasures;
     }
     
-    public void substractVisibleTreasure(Treasure t){
-        
+    public void substractVisibleTreasure(Treasure t){       //Hay que restar 1 en caso de borrar e nVisibleTreasure??
+        boolean esta = false;
+        int ind;
+        for(ind = 0; ind < specificVisibleTreasures.size(); ind++){
+            if(t.getType() == specificVisibleTreasures.get(ind))
+                esta = true;
+        }
+        if(esta)
+           specificVisibleTreasures.remove(ind);
     }
     
     public void substractHiddenTreasure(Treasure t){
-        
+        boolean esta = false;
+        int ind;
+        for(ind = 0; ind < specificHiddenTreasures.size(); ind++){
+            if(t.getType() == specificHiddenTreasures.get(ind))
+                esta = true;
+        }
+        if(esta)
+           specificHiddenTreasures.remove(ind);
     }
     
     public String getText(){
