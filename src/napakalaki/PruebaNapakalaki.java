@@ -216,12 +216,7 @@ public class PruebaNapakalaki {
 //            if(monst.getBadConsequence().getSpecificHiddentreasures() != null || monst.getBadConsequence().getSpecificVisibletreasures() != null)
 //                System.out.println(monst.toString());
 //        }
-        CardDealer cd = CardDealer.getInstance();
-        
-       
-       System.out.println(cd.getMayMons());
-       
-       
+       CardDealer cd = CardDealer.getInstance();              
        System.out.println(CombatResult.WINGAME == CombatResult.WINGAME);
        
        Napakalaki n = Napakalaki.getInstance();

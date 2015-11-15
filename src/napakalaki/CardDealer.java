@@ -208,11 +208,24 @@ public class CardDealer {
         return instance;
     }
     public Treasure nextTreasure(){
-        return null;
-        
+        if(unusedTreasures.isEmpty()){
+            unusedTreasures = usedTreasures;
+            shuffleTreasure();
+            usedTreasures.clear();
+        }        
+        Treasure aux = unusedTreasures.get(0);
+        unusedTreasures.remove(0);
+        return aux;        
     }
     public Monster nextMonster(){
-        return null;      
+        if(unusedMonsters.isEmpty()){
+            unusedMonsters = usedMonsters;
+            shuffleMonsters();
+            usedMonsters.clear();
+        }        
+        Monster aux = unusedMonsters.get(0);
+        unusedMonsters.remove(0);
+        return aux;       
     }
     public void giveTreasureBack(Treasure t){
         usedTreasures.add(t);
@@ -223,20 +236,4 @@ public class CardDealer {
     public void initCards(){
         
     }
-    
-    
-    //PRUEBA EXAMEN--------
-    public Monster getMayMons(){
-        initMonsterCardDeck();
-        int i = 0;
-        int level = 0;
-        for (int j = 0; j < unusedMonsters.size(); j++) {
-            if (level < unusedMonsters.get(j).getCombatLevel()){
-                i = j;
-        }
-        }
-        return unusedMonsters.get(i);
-    }
-    
-    //---------------------
 }
