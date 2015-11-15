@@ -29,20 +29,36 @@ public class Napakalaki {
     }
     
     private void initPlayers(ArrayList<String> names){
-        
+        for(String name: names){
+            players.add(new Player(name));
+        }
     }
     
     Player nextPlayer(){
-        return null;
+        int ind = 0;
+        if(currentPlayer == null)
+            ind = (int)(Math.random()*players.size());
+        else{
+            for(int x = 0; x<players.size(); x++){
+                if(players.get(x).getName() == currentPlayer.getName()){
+                    if(x < (players.size()-1))
+                        ind = x+1;
+                }
+            }
+        }
+        return players.get(ind);
         
     }
-    
+    //
     private boolean nextTurnAllowed(){
-        return true;
+        return currentPlayer.validState();
     }
     
     private void setEnemies(){
-        
+        int ind; 
+        do{
+            ind = (int)(Math.random()*players.size());
+        }while(!players.get(ind).getName().equals(currentPlayer.getName()));
     }
     
     public static Napakalaki getInstance(){
@@ -71,12 +87,11 @@ public class Napakalaki {
     }
     
     public Player getCurrentPlayer(){
-        return null;
-    
+        return currentPlayer;   
     }
     
     public Monster getCurrentMonster(){
-        return null;
+        return currentMonster;
         
     }
     
@@ -86,7 +101,7 @@ public class Napakalaki {
     }
     
     public boolean endOfGame(CombatResult result){
-        return false;
+        return result == CombatResult.WINGAME;
         
     }
     

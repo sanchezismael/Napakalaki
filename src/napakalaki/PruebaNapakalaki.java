@@ -220,6 +220,12 @@ public class PruebaNapakalaki {
         
        
        System.out.println(cd.getMayMons());
+       
+       
+       System.out.println(CombatResult.WINGAME == CombatResult.WINGAME);
+       
+       Napakalaki n = Napakalaki.getInstance();
+       System.out.println(n.endOfGame(CombatResult.WINGAME));
         
     }
 //    
