@@ -32,12 +32,15 @@ public class Player{
         visibleTreasures = new ArrayList();
         pendingBadConsequence = null;
     }
+    
     public String getName(){
         return name;
     }
+    
     private void bringToLife(){
         dead = false;
     }
+    
     private int getCombatLevel(){
         int bonus = 0;
         
@@ -47,30 +50,63 @@ public class Player{
         
         return level+bonus;
     }
+    
     private void incrementLevels(int l){
         level = level + l;
         if (level>MAXLEVEL)
             level = MAXLEVEL;
     }
+    
     private void decrementLevels(int l){
         level = level - l;
         if (level < l)
             level = l;
         
     }
+    
     private void setPendingBadConsequence(BadConsequence b){
         this.pendingBadConsequence = b;
     }
+    
     private void applyPrize(Monster m){
         
     }
+    
     private void applyBadConsequence(Monster m){
         
     }
-    private boolean canMakeTreasureVisible(Treasure t){
-        return false;
-        
+    
+    private boolean canMakeTreasureVisible(Treasure t){                
+        if(t.getType() == TreasureKind.ONEHAND){
+            int contMan = 0;
+            for(Treasure v : visibleTreasures){
+                if(v.getType() == TreasureKind.BOTHHANDS){
+                    contMan = 2;
+                }
+                else if(v.getType() == TreasureKind.ONEHAND){
+                    contMan++;
+                }
+            }
+            return contMan < 2;
+        }
+        else if(t.getType() == TreasureKind.BOTHHANDS){
+            for(Treasure v : visibleTreasures){
+                if(v.getType() == TreasureKind.BOTHHANDS || v.getType() == TreasureKind.ONEHAND){
+                    return false;
+                }
+            }
+            return true;
+        }
+        else{        
+            for(Treasure v : visibleTreasures){
+                    if(v.getType() == t.getType()){
+                        return false;
+                    }
+            }
+            return true;
+        }
     }
+    
     private int howManyVisibleTreasures(TreasureKind tKind){
         int contador = 0;
         for (Treasure visibleTreasure : visibleTreasures) {
@@ -128,8 +164,8 @@ public class Player{
         this.enemy=enemy;
     }
     private Treasure giveMeATreasure(){
-        return null;
-        
+        int ind = (int)(Math.random()*hiddenTreasures.size());
+        return hiddenTreasures.get(ind);
     }
     public boolean canISteal(){
         return canISteal;
