@@ -55,10 +55,12 @@ public class Napakalaki {
     }
     
     private void setEnemies(){
-        int ind; 
-        do{
-            ind = (int)(Math.random()*players.size());
-        }while(!players.get(ind).getName().equals(currentPlayer.getName()));
+        int ind = (int)(Math.random()*players.size());
+        for(int i = 0; i < players.size(); i++){
+            while(ind == i)
+                ind = (int)(Math.random()*players.size());
+            players.set(i, players.get(ind));
+        }
     }
     
     public static Napakalaki getInstance(){

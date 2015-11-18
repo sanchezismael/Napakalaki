@@ -82,6 +82,7 @@ public class Player{
             for(Treasure v : visibleTreasures){
                 if(v.getType() == TreasureKind.BOTHHANDS){
                     contMan = 2;
+                    return false;
                 }
                 else if(v.getType() == TreasureKind.ONEHAND){
                     contMan++;
