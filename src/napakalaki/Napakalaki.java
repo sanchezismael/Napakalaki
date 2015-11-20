@@ -69,19 +69,24 @@ public class Napakalaki {
     }
     
     public CombatResult developCombat(){
-        return null;
+        CombatResult combatResult = currentPlayer.combat(currentMonster);
+        dealer.giveMonsterBack(currentMonster);
         
+        return combatResult;
     }
     
     public void discardVisibleTreasures(ArrayList<Treasure> treasures){
-        for (Treasure treasure : treasures) {
-            currentPlayer.discardVisibleTrasure(treasure);
-            dealer.giveTreasureBack(treasure);
+        for (Treasure visibletreasure : treasures) {
+            currentPlayer.discardVisibleTrasure(visibletreasure);
+            dealer.giveTreasureBack(visibletreasure);
         }
     }
     
     public void discardHiddenTreasures(ArrayList<Treasure> treasures){
-        
+        for (Treasure hiddentreasure : treasures) {
+            currentPlayer.discardHiddenTreasure(hiddentreasure);
+            dealer.giveTreasureBack(hiddentreasure);
+        }
     }
     
     public void makeTreasuresVisible(ArrayList<Treasure> treasures){
