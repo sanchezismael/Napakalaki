@@ -49,9 +49,10 @@ public class Napakalaki {
         return players.get(ind);
         
     }
-    //
+    
     private boolean nextTurnAllowed(){
-        return currentPlayer.validState();
+        boolean stateOK = currentPlayer.validState();
+        return stateOK;
     }
     
     private void setEnemies(){
@@ -85,7 +86,10 @@ public class Napakalaki {
     }
     
     public void initGame(ArrayList<String> players){
-        
+        initPlayers(players);
+        setEnemies();
+        dealer.initCards();
+        nextTurn();   
     }
     
     public Player getCurrentPlayer(){
@@ -96,10 +100,19 @@ public class Napakalaki {
         return currentMonster;
         
     }
-    
-    public boolean nextTurn(){
-        return false;
         
+    public boolean nextTurn(){
+        boolean stateOK = nextTurnAllowed();
+        if (stateOK){
+            currentMonster = dealer.nextMonster();
+            currentPlayer = nextPlayer();
+            boolean dead = currentPlayer.isDead();
+            if (dead){
+                currentPlayer.initTreasures();
+            }
+        }
+        
+        return stateOK;
     }
     
     public boolean endOfGame(CombatResult result){

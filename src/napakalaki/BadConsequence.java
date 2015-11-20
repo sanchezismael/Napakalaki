@@ -73,7 +73,7 @@ public class BadConsequence {
         return nHiddenTreasures;
     }
     
-    public void substractVisibleTreasure(Treasure t){       //Hay que restar 1 en caso de borrar e nVisibleTreasure??
+    public void substractVisibleTreasure(Treasure t){
         boolean esta = false;
         int ind;
         for(ind = 0; ind < specificVisibleTreasures.size(); ind++){
@@ -82,6 +82,8 @@ public class BadConsequence {
         }
         if(esta)
            specificVisibleTreasures.remove(ind);
+        else if (nVisibleTreasures > 0)
+            nVisibleTreasures -= 1;
     }
     
     public void substractHiddenTreasure(Treasure t){
@@ -93,6 +95,8 @@ public class BadConsequence {
         }
         if(esta)
            specificHiddenTreasures.remove(ind);
+        else if (nHiddenTreasures > 0)
+            nHiddenTreasures -= 1;
     }
     
     public String getText(){

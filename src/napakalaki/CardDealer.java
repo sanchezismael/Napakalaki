@@ -234,6 +234,7 @@ public class CardDealer {
         usedMonsters.add(m);
     }
     public void initCards(){
-        
+        initTreasureCardDeck();
+        initMonsterCardDeck();
     }
 }
