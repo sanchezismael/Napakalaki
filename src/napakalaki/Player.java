@@ -117,53 +117,77 @@ public class Player{
         }
         return contador;
     }
+    
     private void dielfNoTreasures(){
         if (visibleTreasures.isEmpty() && hiddenTreasures.isEmpty())
             dead = true;
     }
+    
     public boolean isDead(){
         return dead;
     }
+    
     public ArrayList<Treasure> getHiddenTreasures(){
         return null;
         
     }
+    
     public ArrayList<Treasure> getVisibleTreasures(){
         return null;
         
     }
+    
     public CombatResult combat(Monster m){
         return null;
         
     }
+    
     public void makeTreasureVisible(Treasure t){
         
     }
+    
     public void discardVisibleTrasure(Treasure t){
+        visibleTreasures.remove(t);
         
+        if (pendingBadConsequence != null && !pendingBadConsequence.isEmpty())
+            pendingBadConsequence.substractVisibleTreasure(t);
+        
+        dielfNoTreasures();
     }
+    
     public void discardHiddenTreasure(Treasure t){
+        hiddenTreasures.remove(t);
         
+        if (pendingBadConsequence != null && !pendingBadConsequence.isEmpty())
+            pendingBadConsequence.substractHiddenTreasure(t);
+        
+        dielfNoTreasures();
     }
+    
     public boolean validState(){
         if (pendingBadConsequence.isEmpty() && hiddenTreasures.size() <= 4)
             return true;
         else
             return false;
     }
+    
     public void initTreasures(){
         
     }
+    
     public int getLevels(){
         return level;
     }
+    
     public Treasure stealITreasure(){
         return null;
         
     }
+    
     public void setEnemy(Player enemy){
         this.enemy=enemy;
     }
+    
     private Treasure giveMeATreasure(){
         int ind = (int)(Math.random()*hiddenTreasures.size());
         return hiddenTreasures.get(ind);
