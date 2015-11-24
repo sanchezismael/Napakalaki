@@ -69,11 +69,25 @@ public class Player{
     }
     
     private void applyPrize(Monster m){
-        
+        int nLevels = m.getLevelsGained();
+        incrementLevels(nLevels);
+        int nTreasures = m.getTreasuresGained();
+        if(nTreasures > 0){
+            CardDealer dealer = CardDealer.getInstance();
+            Treasure treasure;
+            for(int i= 0; i < nTreasures; i++){
+                treasure = dealer.nextTreasure();
+                hiddenTreasures.add(treasure);
+            }
+        }
     }
     
     private void applyBadConsequence(Monster m){
-        
+        BadConsequence badConsequence = m.getBadConsequence();
+        int nLevels = badConsequence.getLevels();
+        decrementLevels(nLevels);
+        BadConsequence pendingBad = badConsequence.adjustToFitTreasureLists(visibleTreasures, hiddenTreasures);
+        setPendingBadConsequence(pendingBad);
     }
     
     private boolean canMakeTreasureVisible(Treasure t){                
@@ -191,6 +205,20 @@ public class Player{
     }
     
     public void initTreasures(){
+        CardDealer dealer = CardDealer.getInstance();
+        Dice dice = Dice.getInstance();
+        bringToLife();
+        Treasure treasure = dealer.nextTreasure();
+        hiddenTreasures.add(treasure);
+        int number = dice.nextNumber();
+        if(number > 1){
+            treasure = dealer.nextTreasure();
+            hiddenTreasures.add(treasure);
+        }
+        if(number == 6){
+            treasure = dealer.nextTreasure();
+            hiddenTreasures.add(treasure);
+        }
         
     }
     
@@ -199,8 +227,17 @@ public class Player{
     }
     
     public Treasure stealITreasure(){
-        return null;
-        
+        boolean canI = canISteal();
+        if(canI){
+            boolean canYou =  enemy.canYouGiveMeATreasure();
+            if(canYou){
+                Treasure treasure = enemy.giveMeATreasure();
+                hiddenTreasures.add(treasure);
+                haveStolen();
+                return treasure;
+            }  
+        }     
+        return null;   
     }
     
     public void setEnemy(Player enemy){
@@ -221,6 +258,11 @@ public class Player{
         canISteal = false;
     }
     public void discardAllTreasures(){
-        
+        for (Treasure treasure : visibleTreasures) {
+            discardVisibleTrasure(treasure);
+        }
+        for(Treasure treasure : hiddenTreasures){
+            discardHiddenTreasure(treasure);
+        }
     }
 }

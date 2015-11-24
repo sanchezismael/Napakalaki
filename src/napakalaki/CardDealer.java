@@ -14,7 +14,7 @@ import java.util.Collections;
  * @author jmfajardo
  */
 public class CardDealer {
-    private static final CardDealer instance = new CardDealer();
+    static final CardDealer instance = new CardDealer();
     
     private ArrayList<Treasure> unusedTreasures;
     private ArrayList<Treasure> usedTreasures;
