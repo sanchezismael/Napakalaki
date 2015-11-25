@@ -116,7 +116,41 @@ public class BadConsequence {
     }
     
     public BadConsequence adjustToFitTreasureLists(ArrayList<Treasure> v, ArrayList<Treasure> h){
-        return null;
+        BadConsequence bc = null;
+        if(nVisibleTreasures > 0){
+            if(nVisibleTreasures > v.size()){
+                bc.nVisibleTreasures = v.size();
+            }
+            else{
+                bc.nVisibleTreasures = nVisibleTreasures;
+            }
+        }
+        else{
+            for (TreasureKind specificVisibleTreasure : specificVisibleTreasures) {
+                for(Treasure treasure : v){
+                    if(treasure.getType() == specificVisibleTreasure)
+                        bc.specificVisibleTreasures.add(specificVisibleTreasure);
+                }                 
+            }
+        }
+        if(nHiddenTreasures > 0){
+            if(nHiddenTreasures > h.size()){
+                bc.nHiddenTreasures = h.size();
+            }
+            else{
+                bc.nHiddenTreasures = nHiddenTreasures;
+            }
+        }
+        else{
+           for (TreasureKind specificHiddenTreasure : specificHiddenTreasures) {
+                for(Treasure treasure : h){
+                    if(treasure.getType() == specificHiddenTreasure)
+                        bc.specificVisibleTreasures.add(specificHiddenTreasure);
+                }                 
+            }
+        }
+        
+        return bc;
         
     }
     
