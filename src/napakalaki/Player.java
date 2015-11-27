@@ -258,11 +258,14 @@ public class Player{
         canISteal = false;
     }
     public void discardAllTreasures(){
-        ArrayList<Treasure> cvisibleTreasures = visibleTreasures;
+        ArrayList<Treasure>cvisibleTreasures;
+        cvisibleTreasures = new ArrayList(visibleTreasures);
+        
         for (Treasure treasure : cvisibleTreasures) {
             discardVisibleTrasure(treasure);
         }
-        ArrayList<Treasure> chiddenTreasures = hiddenTreasures;
+        ArrayList<Treasure> chiddenTreasures;
+        chiddenTreasures = new ArrayList(hiddenTreasures);
         for(Treasure treasure : chiddenTreasures){
             discardHiddenTreasure(treasure);
         }
