@@ -142,12 +142,12 @@ public class Player{
     }
     
     public ArrayList<Treasure> getHiddenTreasures(){
-        return null;
+        return hiddenTreasures;
         
     }
     
     public ArrayList<Treasure> getVisibleTreasures(){
-        return null;
+        return visibleTreasures;
         
     }
     
@@ -198,10 +198,7 @@ public class Player{
     }
     
     public boolean validState(){
-        if (pendingBadConsequence.isEmpty() && hiddenTreasures.size() <= 4)
-            return true;
-        else
-            return false;
+        return pendingBadConsequence.isEmpty() && hiddenTreasures.size() <= 4;
     }
     
     public void initTreasures(){
@@ -226,7 +223,7 @@ public class Player{
         return level;
     }
     
-    public Treasure stealITreasure(){
+    public Treasure stealTreasure(){
         boolean canI = canISteal();
         if(canI){
             boolean canYou =  enemy.canYouGiveMeATreasure();
@@ -269,5 +266,17 @@ public class Player{
         for(Treasure treasure : chiddenTreasures){
             discardHiddenTreasure(treasure);
         }
+    }
+    
+    public String toString(){
+        String nomplayer = "Name= "+name+"\n  Level= "+Integer.toString(level)+" \n  dead= "+
+                Boolean.toString(dead)+" \n  canIsteal= "+
+                Boolean.toString(canISteal)+" \n  enemy= "+ enemy.getName()+
+                "\n  hiddenTreasures= "+hiddenTreasures+" \n  visibleTreasures= "
+                +visibleTreasures;
+                if(pendingBadConsequence != null)
+                    nomplayer += "\n  pendingBadConsequence"+pendingBadConsequence.toString();
+        
+        return nomplayer;
     }
 }

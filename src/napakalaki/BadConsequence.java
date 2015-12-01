@@ -116,7 +116,7 @@ public class BadConsequence {
     }
     
     public BadConsequence adjustToFitTreasureLists(ArrayList<Treasure> v, ArrayList<Treasure> h){
-        BadConsequence bc = null;
+        BadConsequence bc = new BadConsequence("",false);
         if(nVisibleTreasures > 0){
             if(nVisibleTreasures > v.size()){
                 bc.nVisibleTreasures = v.size();

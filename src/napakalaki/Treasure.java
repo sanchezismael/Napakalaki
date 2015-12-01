@@ -31,4 +31,9 @@ public class Treasure {
     public TreasureKind getType(){
         return type;
     }
+    
+    public String toString(){
+        return "Name= "+name+" Bonus= "+Integer.toString(bonus)+" type= "+
+                type;
+    }
 }
