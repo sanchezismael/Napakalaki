@@ -64,7 +64,7 @@ public class CardDealer {
         unusedTreasures.add(new Treasure("Tentáculo de pega",2,TreasureKind.HELMET));
         unusedTreasures.add(new Treasure("Zapato deja-amigos",1,TreasureKind.SHOES));
 
-        
+        shuffleTreasure();  //Esto no va aquí, pero lo pongo porque no se llama nunca a esta función para barajar
     }
     private void initMonsterCardDeck(){
         //3 Byakhees de bonanza
@@ -197,6 +197,8 @@ public class CardDealer {
                 + "manos",3,new ArrayList(Arrays.asList(TreasureKind.BOTHHANDS)),new ArrayList());
         Prize prizeBicefalo = new Prize(1,1);
         unusedMonsters.add(new Monster("Bicéfalo",20,badBicefalo,prizeBicefalo));
+        
+        shuffleMonsters();  //Esto no va aquí, pero lo pongo porque no se llama nunca a esta función para barajar
     }
     private void shuffleTreasure(){
         Collections.shuffle(unusedTreasures);
