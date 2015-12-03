@@ -74,27 +74,31 @@ public class BadConsequence {
     }
     
     public void substractVisibleTreasure(Treasure t){
-        boolean esta = false;
-        int ind;
-        for(ind = 0; ind < specificVisibleTreasures.size(); ind++){
-            if(t.getType() == specificVisibleTreasures.get(ind))
-                esta = true;
+        if(specificVisibleTreasures.size() != 0){
+            boolean esta = false;
+            int ind;
+            for(ind = 0; ind < specificVisibleTreasures.size() && !esta; ind++){
+                if(t.getType() == specificVisibleTreasures.get(ind))
+                    esta = true;
+            }
+            if(esta)
+               specificVisibleTreasures.remove(ind-1);
         }
-        if(esta)
-           specificVisibleTreasures.remove(ind);
         else if (nVisibleTreasures > 0)
             nVisibleTreasures -= 1;
     }
     
     public void substractHiddenTreasure(Treasure t){
-        boolean esta = false;
-        int ind;
-        for(ind = 0; ind < specificHiddenTreasures.size(); ind++){
-            if(t.getType() == specificHiddenTreasures.get(ind))
-                esta = true;
+        if(specificHiddenTreasures.size() != 0){
+            boolean esta = false;
+            int ind;
+            for(ind = 0; ind < specificHiddenTreasures.size(); ind++){
+                if(t.getType() == specificHiddenTreasures.get(ind))
+                    esta = true;
+            }
+            if(esta)
+               specificHiddenTreasures.remove(ind-1);
         }
-        if(esta)
-           specificHiddenTreasures.remove(ind);
         else if (nHiddenTreasures > 0)
             nHiddenTreasures -= 1;
     }
@@ -116,6 +120,7 @@ public class BadConsequence {
     }
     
     public BadConsequence adjustToFitTreasureLists(ArrayList<Treasure> v, ArrayList<Treasure> h){
+        boolean esta = false;
         BadConsequence bc = new BadConsequence("",false);
         if(nVisibleTreasures > 0){
             if(nVisibleTreasures > v.size()){
@@ -127,10 +132,14 @@ public class BadConsequence {
         }
         else{
             for (TreasureKind specificVisibleTreasure : specificVisibleTreasures) {
+                esta = false;
                 for(Treasure treasure : v){
                     if(treasure.getType() == specificVisibleTreasure)
-                        bc.specificVisibleTreasures.add(specificVisibleTreasure);
-                }                 
+                        esta = true;
+                }
+                if(esta)
+                    bc.specificVisibleTreasures.add(specificVisibleTreasure);
+                                 
             }
         }
         if(nHiddenTreasures > 0){
@@ -143,10 +152,13 @@ public class BadConsequence {
         }
         else{
            for (TreasureKind specificHiddenTreasure : specificHiddenTreasures) {
+               esta = false;
                 for(Treasure treasure : h){
                     if(treasure.getType() == specificHiddenTreasure)
-                        bc.specificVisibleTreasures.add(specificHiddenTreasure);
+                        esta = true;
                 }                 
+                if(esta)
+                    bc.specificHiddenTreasures.add(specificHiddenTreasure);
             }
         }
         
@@ -155,10 +167,10 @@ public class BadConsequence {
     }
     
     public String toString(){
-        return "Text= "+text+" Levels= "+Integer.toString(levels)+" nHiddenTreasures= "+
-                Integer.toString(nHiddenTreasures)+" nVisibleTreasures= "+
-                Integer.toString(nVisibleTreasures)+" Death= "+ Boolean.toString(death)+
-                "specificVisibleTreasures= "+specificVisibleTreasures+" specificsHiddenTreasures= "
+        return "Text= "+text+" |Levels= "+Integer.toString(levels)+" |nHiddenTreasures= "+
+                Integer.toString(nHiddenTreasures)+" |nVisibleTreasures= "+
+                Integer.toString(nVisibleTreasures)+" |Death= "+ Boolean.toString(death)+
+                " |specificVisibleTreasures= "+specificVisibleTreasures+" |specificsHiddenTreasures= "
                 +specificHiddenTreasures;
     }
 }

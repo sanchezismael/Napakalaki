@@ -30,7 +30,7 @@ public class Player{
         enemy = null;
         hiddenTreasures = new ArrayList();
         visibleTreasures = new ArrayList();
-        pendingBadConsequence = null;
+        pendingBadConsequence = new BadConsequence("", false);
     }
     
     public String getName(){
@@ -269,14 +269,11 @@ public class Player{
     }
     
     public String toString(){
-        String nomplayer = "Name= "+name+"\n  Level= "+Integer.toString(level)+" \n  dead= "+
+        return "Name= "+name+"\n  Level= "+Integer.toString(level)+" \n  dead= "+
                 Boolean.toString(dead)+" \n  canIsteal= "+
                 Boolean.toString(canISteal)+" \n  enemy= "+ enemy.getName()+
                 "\n  hiddenTreasures= "+hiddenTreasures+" \n  visibleTreasures= "
-                +visibleTreasures;
-                if(pendingBadConsequence != null)
-                    nomplayer += "\n  pendingBadConsequence"+pendingBadConsequence.toString();
+                +visibleTreasures+"\n  pendingBadConsequence"+pendingBadConsequence.toString();
         
-        return nomplayer;
     }
 }

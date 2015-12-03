@@ -226,6 +226,7 @@ public class CardDealer {
             usedMonsters.clear();
         }        
         Monster aux = unusedMonsters.get(0);
+        giveMonsterBack(unusedMonsters.get(0));
         unusedMonsters.remove(0);
         return aux;       
     }
