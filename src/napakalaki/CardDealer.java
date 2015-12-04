@@ -221,9 +221,7 @@ public class CardDealer {
     }
     public Monster nextMonster(){
         if(unusedMonsters.isEmpty()){
-            for(Monster m:usedMonsters){
-                unusedMonsters.add(m);
-            }
+            unusedMonsters.addAll(usedMonsters);
             shuffleMonsters();
             usedMonsters.clear();
         }        
