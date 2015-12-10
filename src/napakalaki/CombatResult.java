@@ -11,5 +11,5 @@ package napakalaki;
  * @author Ismael Sánchez y Juan Manuel Fajardo
  */
 public enum CombatResult {
-    WINGAME,WIN,LOSE
+    WINGAME,WIN,LOSE,LOSEANDCONVERT
 }

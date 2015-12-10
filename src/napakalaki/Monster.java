@@ -16,12 +16,22 @@ public class Monster {
     private int combatLevel;
     private Prize unPrize;
     private BadConsequence unBad;
+    private int levelChangeAgainstCultistPlayer;
     
     public Monster(String n, int l,BadConsequence b,Prize p){
         name = n;
         combatLevel = l;
         unPrize = p;
         unBad = b;
+        levelChangeAgainstCultistPlayer = 0;
+    }
+    
+    public Monster(String n, int l,BadConsequence b,Prize p, int IC){
+        name = n;
+        combatLevel = l;
+        unPrize = p;
+        unBad = b;
+        levelChangeAgainstCultistPlayer = IC;
     }
     
     public String getName(){
@@ -29,6 +39,10 @@ public class Monster {
     }
     public int getCombatLevel(){
         return combatLevel;
+    }
+    
+    public int getCombatLevelAgainstCultistPlayer(){
+        return levelChangeAgainstCultistPlayer;
     }
     
 //    public Prize getPrize(){          //este método no viene en el diagrama de clases
