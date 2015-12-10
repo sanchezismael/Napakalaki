@@ -17,7 +17,7 @@ public class Player{
     private int level;
     private boolean dead;
     private boolean canISteal;   
-    private Player enemy;
+    Player enemy;
     private ArrayList<Treasure> hiddenTreasures;
     private ArrayList<Treasure> visibleTreasures;
     private BadConsequence pendingBadConsequence;
@@ -31,6 +31,42 @@ public class Player{
         hiddenTreasures = new ArrayList();
         visibleTreasures = new ArrayList();
         pendingBadConsequence = new BadConsequence("", false);
+    }
+    
+    // Constructor de copia
+    
+    public Player(Player p){
+        this.name = p.name;
+        level = p.level;
+        dead = p.dead;
+        canISteal = p.canISteal;
+        enemy = p.enemy;
+        hiddenTreasures = p.hiddenTreasures;
+        visibleTreasures = p.visibleTreasures;
+        pendingBadConsequence = p.pendingBadConsequence;
+    }
+    
+    protected int getOponentLevel(Monster m){
+        return m.getCombatLevel();
+    }
+    
+    protected boolean shouldConvert(){
+        Dice dice = Dice.getInstance();
+        int number = dice.nextNumber();
+        boolean shouldconv = false;
+        
+        if (number == 1)
+            shouldconv = true;
+        
+        return shouldconv;
+    }
+    
+    protected int getCombatLevel(){
+        
+    }
+    
+    protected Player getEnemy(){
+        return enemy;
     }
     
     public String getName(){
@@ -153,7 +189,7 @@ public class Player{
     
     public CombatResult combat(Monster m){
         int myLevel = getCombatLevel();
-        int monsterLevel = m.getCombatLevel();
+        int monsterLevel = getOponentLevel(m);
         CombatResult combatResult;
         
         if (myLevel > monsterLevel){
@@ -165,6 +201,8 @@ public class Player{
         } else {
             applyBadConsequence(m);
             combatResult = CombatResult.LOSE;
+            if (shouldConvert())
+                combatResult = CombatResult.LOSEANDCONVERT;  
         }
       
         return combatResult;

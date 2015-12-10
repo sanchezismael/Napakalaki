@@ -14,31 +14,42 @@ import java.util.ArrayList;
 public class CultistPlayer extends Player{
     
     private static int totalCultistPlayers = 0;
+    private Cultist myCultistCard;
     
     public CultistPlayer (Player p, Cultist c){
-        
+        super(p);
+        myCultistCard = c;
+        totalCultistPlayers++;
     }
     
-    //@Override
     protected int getCombatLevel(){
+        int lvl = super.getCombatLevel();
+        lvl = lvl + lvl*0.2;
+        lvl = lvl + myCultistCard.getGainedLevels();
+        lvl = lvl + lvl*totalCultistPlayers;
         
+        return lvl;
     }
     
+    @Override
     protected int getOponentLevel(Monster m){
-        
+        return m.getCombatLevelAgainstCultistPlayer();
     }
     
+    @Override
     protected boolean shouldConvert(){
         
     }
     
+    @Override
     private Treasure giveMeATreasure(){
-        
+        int ind = (int)(Math.random()*visibleTreasures.size());
+        return visibleTreasures.get(ind);
     }
     
     // Qué devuelve?
     private boolean canYouGiveMeATreasure(){
-        
+        return !visibleTreasures.isEmpty();
     }
     
     static int getTotalCultisPlayers(){

@@ -42,7 +42,7 @@ public class Monster {
     }
     
     public int getCombatLevelAgainstCultistPlayer(){
-        return levelChangeAgainstCultistPlayer;
+        return combatLevel+levelChangeAgainstCultistPlayer;
     }
     
 //    public Prize getPrize(){          //este método no viene en el diagrama de clases
