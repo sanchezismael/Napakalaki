@@ -61,10 +61,6 @@ public class Player{
         return shouldconv;
     }
     
-    protected int getCombatLevel(){
-        
-    }
-    
     protected Player getEnemy(){
         return enemy;
     }
@@ -77,7 +73,7 @@ public class Player{
         dead = false;
     }
     
-    private int getCombatLevel(){
+    protected int getCombatLevel(){
         int bonus = 0;
         
         for (Treasure visibleTreasure : visibleTreasures) {
