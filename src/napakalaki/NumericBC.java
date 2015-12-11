@@ -5,6 +5,8 @@
  */
 package napakalaki;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Ismael y Juan
@@ -41,8 +43,53 @@ public class NumericBC extends BadConsequence{
         if (nHiddenTreasures > 0)
             nHiddenTreasures -= 1;
     }
-// substractVisibleTreasure
-// substractHiddenTreasure 
+    
+    public BadConsequence adjustToFitTreasureLists(ArrayList<Treasure> v, ArrayList<Treasure> h){
+        boolean esta = false;
+        BadConsequence bc = new BadConsequence("",false);
+        if(nVisibleTreasures > 0){
+            if(nVisibleTreasures > v.size()){
+                bc.nVisibleTreasures = v.size();
+            }
+            else{
+                bc.nVisibleTreasures = nVisibleTreasures;
+            }
+        }
+        else{
+            for (TreasureKind specificVisibleTreasure : specificVisibleTreasures) {
+                esta = false;
+                for(Treasure treasure : v){
+                    if(treasure.getType() == specificVisibleTreasure)
+                        esta = true;
+                }
+                if(esta)
+                    bc.specificVisibleTreasures.add(specificVisibleTreasure);
+                                 
+            }
+        }
+        if(nHiddenTreasures > 0){
+            if(nHiddenTreasures > h.size()){
+                bc.nHiddenTreasures = h.size();
+            }
+            else{
+                bc.nHiddenTreasures = nHiddenTreasures;
+            }
+        }
+        else{
+           for (TreasureKind specificHiddenTreasure : specificHiddenTreasures) {
+               esta = false;
+                for(Treasure treasure : h){
+                    if(treasure.getType() == specificHiddenTreasure)
+                        esta = true;
+                }                 
+                if(esta)
+                    bc.specificHiddenTreasures.add(specificHiddenTreasure);
+            }
+        }
+        
+        return bc;
+        
+    }
 // adjustToFitTreasureList 
 
 }

@@ -65,35 +65,35 @@ public class BadConsequence {
     
     
     
-    public void substractVisibleTreasure(Treasure t){
-        if(specificVisibleTreasures.size() != 0){
-            boolean esta = false;
-            int ind;
-            for(ind = 0; ind < specificVisibleTreasures.size() && !esta; ind++){
-                if(t.getType() == specificVisibleTreasures.get(ind))
-                    esta = true;
-            }
-            if(esta)
-               specificVisibleTreasures.remove(ind-1);
-        }
-        else if (nVisibleTreasures > 0)
-            nVisibleTreasures -= 1;
-    }
+    public abstract void substractVisibleTreasure(Treasure t);
+//        if(specificVisibleTreasures.size() != 0){
+//            boolean esta = false;
+//            int ind;
+//            for(ind = 0; ind < specificVisibleTreasures.size() && !esta; ind++){
+//                if(t.getType() == specificVisibleTreasures.get(ind))
+//                    esta = true;
+//            }
+//            if(esta)
+//               specificVisibleTreasures.remove(ind-1);
+//        }
+//        else if (nVisibleTreasures > 0)
+//            nVisibleTreasures -= 1;
+//    }
     
-    public void substractHiddenTreasure(Treasure t){
-        if(specificHiddenTreasures.size() != 0){
-            boolean esta = false;
-            int ind;
-            for(ind = 0; ind < specificHiddenTreasures.size(); ind++){
-                if(t.getType() == specificHiddenTreasures.get(ind))
-                    esta = true;
-            }
-            if(esta)
-               specificHiddenTreasures.remove(ind-1);
-        }
-        else if (nHiddenTreasures > 0)
-            nHiddenTreasures -= 1;
-    }
+    public abstract void substractHiddenTreasure(Treasure t);
+//        if(specificHiddenTreasures.size() != 0){
+//            boolean esta = false;
+//            int ind;
+//            for(ind = 0; ind < specificHiddenTreasures.size(); ind++){
+//                if(t.getType() == specificHiddenTreasures.get(ind))
+//                    esta = true;
+//            }
+//            if(esta)
+//               specificHiddenTreasures.remove(ind-1);
+//        }
+//        else if (nHiddenTreasures > 0)
+//            nHiddenTreasures -= 1;
+//    }
     
     public String getText(){
         return text;
