@@ -77,7 +77,8 @@ public class Napakalaki {
         if (combatresult == CombatResult.LOSEANDCONVERT){
             Cultist carta = dealer.nextCultist();
             CultistPlayer unCultist = new CultistPlayer(currentPlayer, carta);
-            //
+            players.remove(currentPlayer);
+            players.add(unCultist);
             currentPlayer = unCultist;
         }
         
