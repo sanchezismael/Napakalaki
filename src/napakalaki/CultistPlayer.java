@@ -21,12 +21,12 @@ public class CultistPlayer extends Player{
         myCultistCard = c;
         totalCultistPlayers++;
     }
-    
+    @Override
     protected int getCombatLevel(){
         int lvl = super.getCombatLevel();
-        lvl = lvl + lvl*0.2;
+        lvl = (int) ((int) lvl*1.2);
         lvl = lvl + myCultistCard.getGainedLevels();
-        lvl = lvl + lvl*totalCultistPlayers;
+        lvl = lvl*totalCultistPlayers;
         
         return lvl;
     }
@@ -38,18 +38,19 @@ public class CultistPlayer extends Player{
     
     @Override
     protected boolean shouldConvert(){
-        
+        return false;
     }
     
-    @Override
-    private Treasure giveMeATreasure(){
-        int ind = (int)(Math.random()*visibleTreasures.size());
-        return visibleTreasures.get(ind);
+    
+     private Treasure giveMeATreasure(){
+        int ind = (int)(Math.random()*this.getVisibleTreasures().size());
+        return this.getVisibleTreasures().get(ind);
     }
     
     // Qué devuelve?
+    
     private boolean canYouGiveMeATreasure(){
-        return !visibleTreasures.isEmpty();
+        return !enemy.getVisibleTreasures().isEmpty();
     }
     
     static int getTotalCultisPlayers(){
