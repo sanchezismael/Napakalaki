@@ -24,55 +24,46 @@ public class BadConsequence {
     private ArrayList<TreasureKind> specificHiddenTreasures ;
     private ArrayList<TreasureKind> specificVisibleTreasures;
     
-    public BadConsequence(String text,int levels,int nVisible,int nHidden){
-        this.text = text;
-        this.levels = levels;
-        death = false;
-        nVisibleTreasures = nVisible;
-        nHiddenTreasures = nHidden;
-        specificHiddenTreasures = new ArrayList();
-        specificVisibleTreasures = new ArrayList();
-    }
+//    public BadConsequence(String text,int levels,int nVisible,int nHidden){
+//        this.text = text;
+//        this.levels = levels;
+//        death = false;
+//        nVisibleTreasures = nVisible;
+//        nHiddenTreasures = nHidden;
+//        specificHiddenTreasures = new ArrayList();
+//        specificVisibleTreasures = new ArrayList();
+//    }
+//    
+//    public BadConsequence(String text,boolean death){
+//        this.text = text;
+//        this.death = death;
+//        this.levels = 0;
+//        this.nVisibleTreasures = 0;
+//        this.nHiddenTreasures = 0;
+//        specificHiddenTreasures = new ArrayList();
+//        specificVisibleTreasures = new ArrayList();
+//        
+//    }
+//    
+//    public BadConsequence(String text, int levels, ArrayList<TreasureKind> tVisible,
+//            ArrayList<TreasureKind> tHidden){
+//        this.text = text;
+//        this.levels = levels;
+//        this.specificHiddenTreasures = tHidden;
+//        this.specificVisibleTreasures = tVisible;
+//        this.death = false;
+//        this.nVisibleTreasures = 0;
+//        this.nHiddenTreasures = 0;
+//    }
     
-    public BadConsequence(String text,boolean death){
-        this.text = text;
-        this.death = death;
-        this.levels = 0;
-        this.nVisibleTreasures = 0;
-        this.nHiddenTreasures = 0;
-        specificHiddenTreasures = new ArrayList();
-        specificVisibleTreasures = new ArrayList();
-        
-    }
-    
-    public BadConsequence(String text, int levels, ArrayList<TreasureKind> tVisible,
-            ArrayList<TreasureKind> tHidden){
-        this.text = text;
-        this.levels = levels;
-        this.specificHiddenTreasures = tHidden;
-        this.specificVisibleTreasures = tVisible;
-        this.death = false;
-        this.nVisibleTreasures = 0;
-        this.nHiddenTreasures = 0;
-    }
-    
-    public boolean isEmpty(){
-        return levels == 0 && nVisibleTreasures == 0 && nHiddenTreasures == 0
-                && death == false && specificHiddenTreasures.isEmpty()
-                && specificVisibleTreasures.isEmpty();
-    }
+    public abstract boolean isEmpty();
     
     public int getLevels(){
         return levels;
     }
     
-    public int getNVisibleTreasures(){
-        return nVisibleTreasures;
-    }
     
-    public int getNHiddenTreasures(){
-        return nHiddenTreasures;
-    }
+    
     
     public void substractVisibleTreasure(Treasure t){
         if(specificVisibleTreasures.size() != 0){
