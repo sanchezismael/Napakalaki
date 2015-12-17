@@ -20,7 +20,7 @@ public class Player{
     Player enemy;
     private ArrayList<Treasure> hiddenTreasures;
     private ArrayList<Treasure> visibleTreasures;
-    private BadConsequence pendingBadConsequence;
+    private BadConsequence pendingBadConsequence ;
     
     public Player(String name){
         this.name = name;
@@ -30,7 +30,7 @@ public class Player{
         enemy = null;
         hiddenTreasures = new ArrayList();
         visibleTreasures = new ArrayList();
-        pendingBadConsequence = null;
+        pendingBadConsequence = new NumericBC("", 0, 0, 0);
     }
     
     // Constructor de copia
