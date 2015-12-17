@@ -30,7 +30,7 @@ public class Player{
         enemy = null;
         hiddenTreasures = new ArrayList();
         visibleTreasures = new ArrayList();
-        pendingBadConsequence = new BadConsequence("", false);
+        pendingBadConsequence = null;
     }
     
     // Constructor de copia

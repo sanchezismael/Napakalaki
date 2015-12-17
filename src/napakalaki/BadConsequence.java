@@ -16,8 +16,8 @@ import java.util.ArrayList;
 
 public abstract class BadConsequence {
     static final int MAXTREASURES = 10;
-    private String text;
-    private int levels;
+    protected String text;
+    protected int levels;
 //    private int nVisibleTreasures;
 //    private int nHiddenTreasures;
 //    private boolean death;

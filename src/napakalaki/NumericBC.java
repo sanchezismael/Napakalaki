@@ -17,7 +17,9 @@ public class NumericBC extends BadConsequence{
     private int nHiddenTreasures;
     private boolean death;
     
-    public NumericBC(int nV, int nH){
+    public NumericBC(String name, int l,int nV, int nH){
+        text = name;
+        levels = l;
         nVisibleTreasures = nV;
         nHiddenTreasures = nH;
         death = false;
@@ -47,7 +49,7 @@ public class NumericBC extends BadConsequence{
     }
     
     public BadConsequence adjustToFitTreasureLists(ArrayList<Treasure> v, ArrayList<Treasure> h){
-        NumericBC bc = new NumericBC(0,0);
+        NumericBC bc = new NumericBC("",0,0,0);
         
         if(nVisibleTreasures > v.size()){
             bc.nVisibleTreasures = v.size();
