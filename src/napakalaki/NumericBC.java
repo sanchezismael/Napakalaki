@@ -15,10 +15,12 @@ public class NumericBC extends BadConsequence{
     
     private int nVisibleTreasures;
     private int nHiddenTreasures;
+    private boolean death;
     
     public NumericBC(int nV, int nH){
         nVisibleTreasures = nV;
         nHiddenTreasures = nH;
+        death = false;
     }
     
     @Override
@@ -45,50 +47,29 @@ public class NumericBC extends BadConsequence{
     }
     
     public BadConsequence adjustToFitTreasureLists(ArrayList<Treasure> v, ArrayList<Treasure> h){
-        boolean esta = false;
-        BadConsequence bc = new BadConsequence("",false);
-        if(nVisibleTreasures > 0){
-            if(nVisibleTreasures > v.size()){
-                bc.nVisibleTreasures = v.size();
-            }
-            else{
-                bc.nVisibleTreasures = nVisibleTreasures;
-            }
+        NumericBC bc = new NumericBC(0,0);
+        
+        if(nVisibleTreasures > v.size()){
+            bc.nVisibleTreasures = v.size();
         }
         else{
-            for (TreasureKind specificVisibleTreasure : specificVisibleTreasures) {
-                esta = false;
-                for(Treasure treasure : v){
-                    if(treasure.getType() == specificVisibleTreasure)
-                        esta = true;
-                }
-                if(esta)
-                    bc.specificVisibleTreasures.add(specificVisibleTreasure);
-                                 
-            }
+            bc.nVisibleTreasures = nVisibleTreasures;
         }
-        if(nHiddenTreasures > 0){
-            if(nHiddenTreasures > h.size()){
-                bc.nHiddenTreasures = h.size();
-            }
-            else{
-                bc.nHiddenTreasures = nHiddenTreasures;
-            }
+        
+        if(nHiddenTreasures > h.size()){
+            bc.nHiddenTreasures = h.size();
         }
         else{
-           for (TreasureKind specificHiddenTreasure : specificHiddenTreasures) {
-               esta = false;
-                for(Treasure treasure : h){
-                    if(treasure.getType() == specificHiddenTreasure)
-                        esta = true;
-                }                 
-                if(esta)
-                    bc.specificHiddenTreasures.add(specificHiddenTreasure);
-            }
+            bc.nHiddenTreasures = nHiddenTreasures;
         }
         
         return bc;
         
+    }
+    
+    public String toString(){
+        return super.toString()+" |nHiddenTreasures= "+Integer.toString(nHiddenTreasures)+" |nVisibleTreasures= "+
+                Integer.toString(nVisibleTreasures)+" |Death= "+ Boolean.toString(death);
     }
 // adjustToFitTreasureList 
 

@@ -14,15 +14,15 @@ import java.util.ArrayList;
  * 
  */
 
-public class BadConsequence {
+public abstract class BadConsequence {
     static final int MAXTREASURES = 10;
     private String text;
     private int levels;
-    private int nVisibleTreasures;
-    private int nHiddenTreasures;
-    private boolean death;
-    private ArrayList<TreasureKind> specificHiddenTreasures ;
-    private ArrayList<TreasureKind> specificVisibleTreasures;
+//    private int nVisibleTreasures;
+//    private int nHiddenTreasures;
+//    private boolean death;
+//    private ArrayList<TreasureKind> specificHiddenTreasures ;
+//    private ArrayList<TreasureKind> specificVisibleTreasures;
     
 //    public BadConsequence(String text,int levels,int nVisible,int nHidden){
 //        this.text = text;
@@ -99,70 +99,62 @@ public class BadConsequence {
         return text;
     }
     
-    public boolean getDeath(){
-        return death;
-    }
+//    public boolean getDeath(){
+//        return death;
+//    }
     
-    public ArrayList<TreasureKind> getSpecificHiddentreasures(){
-        return specificHiddenTreasures;
-    }
     
-    public ArrayList<TreasureKind> getSpecificVisibletreasures(){
-        return specificVisibleTreasures;
-    }
     
-    public BadConsequence adjustToFitTreasureLists(ArrayList<Treasure> v, ArrayList<Treasure> h){
-        boolean esta = false;
-        BadConsequence bc = new BadConsequence("",false);
-        if(nVisibleTreasures > 0){
-            if(nVisibleTreasures > v.size()){
-                bc.nVisibleTreasures = v.size();
-            }
-            else{
-                bc.nVisibleTreasures = nVisibleTreasures;
-            }
-        }
-        else{
-            for (TreasureKind specificVisibleTreasure : specificVisibleTreasures) {
-                esta = false;
-                for(Treasure treasure : v){
-                    if(treasure.getType() == specificVisibleTreasure)
-                        esta = true;
-                }
-                if(esta)
-                    bc.specificVisibleTreasures.add(specificVisibleTreasure);
-                                 
-            }
-        }
-        if(nHiddenTreasures > 0){
-            if(nHiddenTreasures > h.size()){
-                bc.nHiddenTreasures = h.size();
-            }
-            else{
-                bc.nHiddenTreasures = nHiddenTreasures;
-            }
-        }
-        else{
-           for (TreasureKind specificHiddenTreasure : specificHiddenTreasures) {
-               esta = false;
-                for(Treasure treasure : h){
-                    if(treasure.getType() == specificHiddenTreasure)
-                        esta = true;
-                }                 
-                if(esta)
-                    bc.specificHiddenTreasures.add(specificHiddenTreasure);
-            }
-        }
-        
-        return bc;
-        
-    }
+    
+    
+    public abstract BadConsequence adjustToFitTreasureLists(ArrayList<Treasure> v, ArrayList<Treasure> h);
+//        boolean esta = false;
+//        BadConsequence bc = new BadConsequence("",false);
+//        if(nVisibleTreasures > 0){
+//            if(nVisibleTreasures > v.size()){
+//                bc.nVisibleTreasures = v.size();
+//            }
+//            else{
+//                bc.nVisibleTreasures = nVisibleTreasures;
+//            }
+//        }
+//        else{
+//            for (TreasureKind specificVisibleTreasure : specificVisibleTreasures) {
+//                esta = false;
+//                for(Treasure treasure : v){
+//                    if(treasure.getType() == specificVisibleTreasure)
+//                        esta = true;
+//                }
+//                if(esta)
+//                    bc.specificVisibleTreasures.add(specificVisibleTreasure);
+//                                 
+//            }
+//        }
+//        if(nHiddenTreasures > 0){
+//            if(nHiddenTreasures > h.size()){
+//                bc.nHiddenTreasures = h.size();
+//            }
+//            else{
+//                bc.nHiddenTreasures = nHiddenTreasures;
+//            }
+//        }
+//        else{
+//           for (TreasureKind specificHiddenTreasure : specificHiddenTreasures) {
+//               esta = false;
+//                for(Treasure treasure : h){
+//                    if(treasure.getType() == specificHiddenTreasure)
+//                        esta = true;
+//                }                 
+//                if(esta)
+//                    bc.specificHiddenTreasures.add(specificHiddenTreasure);
+//            }
+//        }
+//        
+//        return bc;
+//        
+//    }
     
     public String toString(){
-        return "Text= "+text+" |Levels= "+Integer.toString(levels)+" |nHiddenTreasures= "+
-                Integer.toString(nHiddenTreasures)+" |nVisibleTreasures= "+
-                Integer.toString(nVisibleTreasures)+" |Death= "+ Boolean.toString(death)+
-                " |specificVisibleTreasures= "+specificVisibleTreasures+" |specificsHiddenTreasures= "
-                +specificHiddenTreasures;
+        return "Text= "+text+" |Levels= "+Integer.toString(levels);
     }
 }
