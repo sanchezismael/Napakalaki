@@ -260,7 +260,7 @@ public class Player{
     public Treasure stealTreasure(){
         boolean canI = canISteal();
         if(canI){
-            boolean canYou =  enemy.canYouGiveMeATreasure();
+            boolean canYou =  canYouGiveMeATreasure();
             if(canYou){
                 Treasure treasure = enemy.giveMeATreasure();
                 hiddenTreasures.add(treasure);
