@@ -297,7 +297,9 @@ public class CardDealer {
     }
     
     public Cultist nextCultist(){
-        return null;
+        Cultist aux = unusedCultists.get(0);
+        unusedCultists.remove(0);
+        return aux;
     }
     
     public void giveTreasureBack(Treasure t){
