@@ -19,6 +19,11 @@ public abstract class BadConsequence {
     protected String text;
     protected int levels;
     
+    public BadConsequence(String text, int levels){
+        this.text = text;
+        this.levels = levels;
+    }
+    
     public abstract boolean isEmpty();
     
     public int getLevels(){

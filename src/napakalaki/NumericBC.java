@@ -18,8 +18,7 @@ public class NumericBC extends BadConsequence{
     private boolean death;
     
     public NumericBC(String name, int l,int nV, int nH){
-        text = name;
-        levels = l;
+        super(name,l);
         nVisibleTreasures = nV;
         nHiddenTreasures = nH;
         death = false;

@@ -16,8 +16,7 @@ public class SpecificBC extends BadConsequence{
     private ArrayList<TreasureKind> specificVisibleTreasures;
     
     public SpecificBC(String name, int l,ArrayList<TreasureKind> v,ArrayList<TreasureKind> h){
-        text = name;
-        levels = l;
+        super(name,l);
         specificHiddenTreasures = h;
         specificVisibleTreasures = v;
     }
