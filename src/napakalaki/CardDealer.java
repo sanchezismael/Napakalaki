@@ -29,7 +29,7 @@ public class CardDealer {
         usedTreasures = new ArrayList();
         unusedMonsters = new ArrayList();
         usedMonsters = new ArrayList();
-        unusedCultists = new ArrayList();
+       
     }
     
     private void initTreasureCardDeck(){
@@ -313,6 +313,5 @@ public class CardDealer {
     public void initCards(){
         initTreasureCardDeck();
         initMonsterCardDeck();
-        initCultistCardDeck();
     }
 }
