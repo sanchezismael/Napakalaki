@@ -62,7 +62,7 @@ public class Player{
         return shouldconv;
     }
     
-    protected Player getEnemy(){
+    public Player getEnemy(){
         return enemy;
     }
     
