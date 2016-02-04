@@ -5,19 +5,32 @@
  */
 package GUI;
 
+import napakalaki.BadConsequence;
+import napakalaki.Player;
+
 /**
  *
  * @author juanmfajardo
  */
-public class hiddenTreasures extends javax.swing.JPanel {
+public class PendingBadConsequenceView extends javax.swing.JPanel {
 
+    private Player pendingBadConsequenceModel; 
     /**
-     * Creates new form hiddenTreasures
+     * Creates new form PendingBadConsequenceView
      */
-    public hiddenTreasures() {
+    public PendingBadConsequenceView() {
         initComponents();
     }
 
+    public void setPendingBadConsequence(Player p){
+        
+        pendingBadConsequenceModel = p;
+        
+        LabelPendingBadConsequence.setText(pendingBadConsequenceModel.getPendingBadConsequence().toString());
+        
+        repaint();
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -27,21 +40,30 @@ public class hiddenTreasures extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 0, 0), 5));
+        LabelPendingBadConsequence = new javax.swing.JLabel();
+
+        LabelPendingBadConsequence.setText("jLabel1");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 390, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(241, 241, 241)
+                .addComponent(LabelPendingBadConsequence)
+                .addContainerGap(253, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 290, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(82, 82, 82)
+                .addComponent(LabelPendingBadConsequence)
+                .addContainerGap(91, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel LabelPendingBadConsequence;
     // End of variables declaration//GEN-END:variables
 }

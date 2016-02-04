@@ -5,6 +5,7 @@
  */
 package GUI;
 
+import javafx.scene.paint.Color;
 import napakalaki.Treasure;
 
 /**
@@ -14,6 +15,8 @@ import napakalaki.Treasure;
 public class TreasureView extends javax.swing.JPanel {
     
     private Treasure treasureModel;
+    private boolean selected = false;
+    
     /**
      * Creates new form TreasureView
      */
@@ -31,6 +34,14 @@ public class TreasureView extends javax.swing.JPanel {
         repaint();
     }
     
+    public boolean isSelected(){
+        return selected;
+    }
+    
+    public Treasure getTreasure(){
+        return treasureModel;
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -43,6 +54,12 @@ public class TreasureView extends javax.swing.JPanel {
         LabelName = new javax.swing.JLabel();
         LabelBonus = new javax.swing.JLabel();
         LabelType = new javax.swing.JLabel();
+
+        addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                formMouseClicked(evt);
+            }
+        });
 
         LabelName.setText("jLabel1");
 
@@ -78,6 +95,15 @@ public class TreasureView extends javax.swing.JPanel {
                 .addGap(24, 24, 24))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void formMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseClicked
+        selected = !selected;
+        
+        setBackground(java.awt.Color.DARK_GRAY);
+        setOpaque(selected);
+        
+        repaint();
+    }//GEN-LAST:event_formMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
