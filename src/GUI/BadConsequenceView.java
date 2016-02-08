@@ -48,16 +48,12 @@ public class BadConsequenceView extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(166, 166, 166)
                 .addComponent(LabelText)
-                .addContainerGap(189, Short.MAX_VALUE))
+                .addGap(0, 116, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(58, 58, 58)
-                .addComponent(LabelText)
-                .addContainerGap(66, Short.MAX_VALUE))
+            .addComponent(LabelText)
         );
     }// </editor-fold>//GEN-END:initComponents
 

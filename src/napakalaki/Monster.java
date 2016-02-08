@@ -45,9 +45,9 @@ public class Monster {
         return combatLevel+levelChangeAgainstCultistPlayer;
     }
     
-//    public Prize getPrize(){          //este método no viene en el diagrama de clases
-//        return unPrize;
-//    }
+    public Prize getPrize(){          //este método no viene en el diagrama de clases
+        return unPrize;
+    }
     
     public BadConsequence getBadConsequence(){
         return unBad;

@@ -42,6 +42,7 @@ public class PendingBadConsequenceView extends javax.swing.JPanel {
 
         LabelPendingBadConsequence = new javax.swing.JLabel();
 
+        LabelPendingBadConsequence.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         LabelPendingBadConsequence.setText("jLabel1");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -49,16 +50,12 @@ public class PendingBadConsequenceView extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(241, 241, 241)
                 .addComponent(LabelPendingBadConsequence)
-                .addContainerGap(253, Short.MAX_VALUE))
+                .addGap(0, 96, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(82, 82, 82)
-                .addComponent(LabelPendingBadConsequence)
-                .addContainerGap(91, Short.MAX_VALUE))
+            .addComponent(LabelPendingBadConsequence)
         );
     }// </editor-fold>//GEN-END:initComponents
 
