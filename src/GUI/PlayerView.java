@@ -5,8 +5,10 @@
  */
 package GUI;
 
+import java.awt.Component;
 import java.util.ArrayList;
 import javax.swing.JPanel;
+import napakalaki.Napakalaki;
 import napakalaki.Player;
 import napakalaki.Treasure;
 
@@ -16,11 +18,16 @@ import napakalaki.Treasure;
  */
 public class PlayerView extends javax.swing.JPanel {
     private Player playerModel;
+    private Napakalaki napakalakiModel;
     /**
      * Creates new form PlayerView
      */
     public PlayerView() {
         initComponents();
+    }
+    
+    public void setNapakalaki(Napakalaki n){
+        napakalakiModel = n;
     }
     
     public void setPlayer(Player unPlayer){
@@ -58,6 +65,22 @@ public class PlayerView extends javax.swing.JPanel {
         //Se fuerza la actualización visual del panel
         aPanel.repaint();
         aPanel.revalidate();
+    }
+    
+    private ArrayList<Treasure> getSelectedTreasures(JPanel aPanel) {
+// Se recorren los tesoros que contiene el panel,
+//    almacenando en un vector aquellos que están seleccionados.
+//    Finalmente se devuelve dicho vector.
+
+        TreasureView tv;
+        ArrayList<Treasure> output = new ArrayList();
+        for (Component c : aPanel.getComponents()) {
+            tv = (TreasureView) c;
+            if (tv.isSelected()) {
+                output.add(tv.getTreasure());
+            }
+        }
+        return output;
     }
     
     /**
@@ -116,6 +139,11 @@ public class PlayerView extends javax.swing.JPanel {
         ButtonStealTreasure.setText("Steal Treasure");
 
         ButtonMakeVisible.setText("Make Visible");
+        ButtonMakeVisible.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonMakeVisibleActionPerformed(evt);
+            }
+        });
 
         ButtonDiscardTreasures.setText("Discard Treasures");
 
@@ -184,6 +212,13 @@ public class PlayerView extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void ButtonMakeVisibleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonMakeVisibleActionPerformed
+        // TODO add your handling code here:
+        ArrayList<Treasure> selHidden = getSelectedTreasures(hiddenTreasures);
+        napakalakiModel.makeTreasuresVisible(selHidden);
+        setPlayer(napakalakiModel.getCurrentPlayer());
+    }//GEN-LAST:event_ButtonMakeVisibleActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
