@@ -137,6 +137,11 @@ public class PlayerView extends javax.swing.JPanel {
         visibleTreasures.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 255, 102)));
 
         ButtonStealTreasure.setText("Steal Treasure");
+        ButtonStealTreasure.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonStealTreasureActionPerformed(evt);
+            }
+        });
 
         ButtonMakeVisible.setText("Make Visible");
         ButtonMakeVisible.addActionListener(new java.awt.event.ActionListener() {
@@ -146,8 +151,18 @@ public class PlayerView extends javax.swing.JPanel {
         });
 
         ButtonDiscardTreasures.setText("Discard Treasures");
+        ButtonDiscardTreasures.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonDiscardTreasuresActionPerformed(evt);
+            }
+        });
 
         ButtonDiscardAllTreasures.setText("Discard All Treasures");
+        ButtonDiscardAllTreasures.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonDiscardAllTreasuresActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -219,6 +234,34 @@ public class PlayerView extends javax.swing.JPanel {
         napakalakiModel.makeTreasuresVisible(selHidden);
         setPlayer(napakalakiModel.getCurrentPlayer());
     }//GEN-LAST:event_ButtonMakeVisibleActionPerformed
+
+    private void ButtonDiscardTreasuresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonDiscardTreasuresActionPerformed
+        // TODO add your handling code here:
+        ArrayList<Treasure> selHidden = getSelectedTreasures(hiddenTreasures);
+        ArrayList<Treasure> selVisible = getSelectedTreasures(visibleTreasures);
+        
+        for(Treasure t : selHidden){
+            playerModel.discardHiddenTreasure(t);
+        }
+        
+        for(Treasure t : selVisible){
+            playerModel.discardVisibleTrasure(t);
+        }
+        
+        setPlayer(napakalakiModel.getCurrentPlayer());
+    }//GEN-LAST:event_ButtonDiscardTreasuresActionPerformed
+
+    private void ButtonDiscardAllTreasuresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonDiscardAllTreasuresActionPerformed
+        // TODO add your handling code here:
+        playerModel.discardAllTreasures();
+        setPlayer(napakalakiModel.getCurrentPlayer());
+    }//GEN-LAST:event_ButtonDiscardAllTreasuresActionPerformed
+
+    private void ButtonStealTreasureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonStealTreasureActionPerformed
+        // TODO add your handling code here:
+        playerModel.stealTreasure();
+        setPlayer(napakalakiModel.getCurrentPlayer());
+    }//GEN-LAST:event_ButtonStealTreasureActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
