@@ -326,7 +326,9 @@ public class PlayerView extends javax.swing.JPanel {
 
     private void ButtonStealTreasureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonStealTreasureActionPerformed
         // TODO add your handling code here:
-        playerModel.stealTreasure();
+        if(playerModel.stealTreasure() != null){
+            ButtonStealTreasure.setVisible(false);
+        }
         setPlayer(napakalakiModel.getCurrentPlayer());
     }//GEN-LAST:event_ButtonStealTreasureActionPerformed
 

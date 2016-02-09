@@ -50,7 +50,7 @@ public class Napakalaki {
         
     }
     
-    private boolean nextTurnAllowed(){
+    public boolean nextTurnAllowed(){
         if(currentPlayer == null)
             return true;
         boolean stateOK = currentPlayer.validState();
