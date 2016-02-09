@@ -5,6 +5,8 @@
  */
 package GUI;
 
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import napakalaki.Monster;
 
 /**
@@ -26,10 +28,14 @@ public class MonsterView extends javax.swing.JPanel {
         
         monsterModel = m;
         
-        LabelCombatLevel.setText(Integer.toString(monsterModel.getCombatLevelAgainstCultistPlayer()));
-        LabelName.setText(monsterModel.getName());
-        badConsequenceView1.setBadConsequence(monsterModel.getBadConsequence());
-        prizeView1.setPrize(monsterModel.getPrize());
+//        LabelCombatLevel.setText(Integer.toString(monsterModel.getCombatLevelAgainstCultistPlayer()));
+//        LabelName.setText(monsterModel.getName());
+//        badConsequenceView1.setBadConsequence(monsterModel.getBadConsequence());
+//        prizeView1.setPrize(monsterModel.getPrize());
+        String iconName = "/GUI/Imagenes/"+monsterModel.getName()+".jpg";
+        System.out.println(iconName);
+        Icon icono = new ImageIcon(MonsterView.class.getResource(iconName));
+        imagen.setIcon(icono);
         
         repaint();
     }
@@ -43,86 +49,32 @@ public class MonsterView extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        prizeView1 = new GUI.PrizeView();
-        badConsequenceView1 = new GUI.BadConsequenceView();
-        LabelCombatLevel = new javax.swing.JLabel();
-        LabelName = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        imagen = new javax.swing.JLabel();
 
-        LabelCombatLevel.setText("CombatLevel");
+        setBackground(new java.awt.Color(0, 153, 153));
 
-        LabelName.setText("jLabel1");
-
-        jLabel1.setText("Nombre: ");
-
-        jLabel2.setText("Nivel de Combate: ");
-
-        jLabel3.setText("Mal Rollo: ");
-
-        jLabel4.setText("Buen Rollo: ");
+        imagen.setText(" ");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(badConsequenceView1, javax.swing.GroupLayout.DEFAULT_SIZE, 303, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(LabelName))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(LabelCombatLevel))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(prizeView1, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addGap(10, 10, 10))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(imagen, javax.swing.GroupLayout.DEFAULT_SIZE, 189, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(LabelName))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(LabelCombatLevel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(badConsequenceView1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
-                    .addComponent(prizeView1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(imagen, javax.swing.GroupLayout.DEFAULT_SIZE, 326, Short.MAX_VALUE)
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel LabelCombatLevel;
-    private javax.swing.JLabel LabelName;
-    private GUI.BadConsequenceView badConsequenceView1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private GUI.PrizeView prizeView1;
+    private javax.swing.JLabel imagen;
     // End of variables declaration//GEN-END:variables
 }

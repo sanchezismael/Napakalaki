@@ -6,6 +6,8 @@
 package GUI;
 
 //import javafx.scene.paint.Color;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import napakalaki.Treasure;
 
 /**
@@ -27,9 +29,13 @@ public class TreasureView extends javax.swing.JPanel {
     public void setTreasure(Treasure t){
         treasureModel = t;
         
-        LabelName.setText(treasureModel.getName());
-        LabelBonus.setText(Integer.toString(treasureModel.getBonus()));
-        LabelType.setText(treasureModel.getType().toString());
+//        LabelName.setText(treasureModel.getName());
+//        LabelBonus.setText(Integer.toString(treasureModel.getBonus()));
+//        LabelType.setText(treasureModel.getType().toString());
+        String iconName = "/GUI/Imagenes/"+treasureModel.getName()+".jpg";
+        System.out.println(iconName);
+        Icon icono = new ImageIcon(MonsterView.class.getResource(iconName));
+        LabelName.setIcon(icono);
         
         repaint();
     }
@@ -52,8 +58,6 @@ public class TreasureView extends javax.swing.JPanel {
     private void initComponents() {
 
         LabelName = new javax.swing.JLabel();
-        LabelBonus = new javax.swing.JLabel();
-        LabelType = new javax.swing.JLabel();
 
         addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -61,32 +65,22 @@ public class TreasureView extends javax.swing.JPanel {
             }
         });
 
-        LabelName.setText("jLabel1");
-
-        LabelBonus.setText("jLabel2");
-
-        LabelType.setText("jLabel3");
+        LabelName.setText(" ");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(LabelBonus)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(LabelName)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(LabelType)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(LabelName, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(LabelBonus)
-                    .addComponent(LabelName)
-                    .addComponent(LabelType))
+                .addContainerGap()
+                .addComponent(LabelName, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -94,7 +88,7 @@ public class TreasureView extends javax.swing.JPanel {
     private void formMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseClicked
         selected = !selected;
         
-        setBackground(java.awt.Color.DARK_GRAY);
+        setBackground(java.awt.Color.GREEN);
         setOpaque(selected);
         
         repaint();
@@ -102,8 +96,6 @@ public class TreasureView extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel LabelBonus;
     private javax.swing.JLabel LabelName;
-    private javax.swing.JLabel LabelType;
     // End of variables declaration//GEN-END:variables
 }

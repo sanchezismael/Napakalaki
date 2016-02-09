@@ -34,36 +34,36 @@ public class CardDealer {
     }
     
     private void initTreasureCardDeck(){
-        unusedTreasures.add(new Treasure("¡Sí mi amo!",4,TreasureKind.HELMET));
-        unusedTreasures.add(new Treasure("Botas de investigación",3,TreasureKind.SHOES));
+        unusedTreasures.add(new Treasure("¡Si mi amo!",4,TreasureKind.HELMET));
+        unusedTreasures.add(new Treasure("Botas de investigacion",3,TreasureKind.SHOES));
         unusedTreasures.add(new Treasure("Capucha de Cthulhu",3,TreasureKind.HELMET));
         unusedTreasures.add(new Treasure("A prueba de babas",2,TreasureKind.ARMOR));
-        unusedTreasures.add(new Treasure("Botas de lluvia ácida",1,TreasureKind.BOTHHANDS));
+        unusedTreasures.add(new Treasure("Botas de lluvia acida",1,TreasureKind.BOTHHANDS));
         unusedTreasures.add(new Treasure("Casco minero",2,TreasureKind.HELMET));
         unusedTreasures.add(new Treasure("Ametralladora Thompson",4,TreasureKind.BOTHHANDS));
         unusedTreasures.add(new Treasure("Camiseta de la UGR",1,TreasureKind.HELMET));
         unusedTreasures.add(new Treasure("Clavo de rail ferroviario",3,TreasureKind.ONEHAND));
         unusedTreasures.add(new Treasure("Cuchillo de sushi arcano",2,TreasureKind.ONEHAND));
-        unusedTreasures.add(new Treasure("Fez alópodo",3,TreasureKind.HELMET));
-        unusedTreasures.add(new Treasure("Hacha prehistórica",2,TreasureKind.ONEHAND));
+        unusedTreasures.add(new Treasure("Fez alopodo",3,TreasureKind.HELMET));
+        unusedTreasures.add(new Treasure("Hacha prehistorica",2,TreasureKind.ONEHAND));
         unusedTreasures.add(new Treasure("El aparato del Pr. Tesla",4,TreasureKind.ARMOR));
         unusedTreasures.add(new Treasure("Gaita",4,TreasureKind.BOTHHANDS));
         unusedTreasures.add(new Treasure("Insecticida",2,TreasureKind.ONEHAND));
         unusedTreasures.add(new Treasure("Escopeta de 3 cañones",4,TreasureKind.BOTHHANDS));
-        unusedTreasures.add(new Treasure("Garabato mística",2,TreasureKind.ONEHAND));
-        unusedTreasures.add(new Treasure("La rebeca metálica",2,TreasureKind.ARMOR));
+        unusedTreasures.add(new Treasure("Garabato mistico",2,TreasureKind.ONEHAND));
+        unusedTreasures.add(new Treasure("La rebeca metalica",2,TreasureKind.ARMOR));
         unusedTreasures.add(new Treasure("Lanzallamas",4,TreasureKind.BOTHHANDS));
-        unusedTreasures.add(new Treasure("Necrocomicón",1,TreasureKind.ONEHAND));
-        unusedTreasures.add(new Treasure("Necronomicón",5,TreasureKind.BOTHHANDS));
+        unusedTreasures.add(new Treasure("Necrocomicon",1,TreasureKind.ONEHAND));
+        unusedTreasures.add(new Treasure("Necronomicon",5,TreasureKind.BOTHHANDS));
         unusedTreasures.add(new Treasure("Linterna a 2 manos",3,TreasureKind.BOTHHANDS));
-        unusedTreasures.add(new Treasure("Necrognomicón",2,TreasureKind.ONEHAND));
+        unusedTreasures.add(new Treasure("Necrognomicon",2,TreasureKind.ONEHAND));
         unusedTreasures.add(new Treasure("Necrotelecom",2,TreasureKind.HELMET));
         unusedTreasures.add(new Treasure("Mazo de los antiguos",3,TreasureKind.ONEHAND));
-        unusedTreasures.add(new Treasure("Necroplayboycón",3,TreasureKind.ONEHAND));
+        unusedTreasures.add(new Treasure("Necroplayboycon",3,TreasureKind.ONEHAND));
         unusedTreasures.add(new Treasure("Porra preternatural",2,TreasureKind.ONEHAND));
         unusedTreasures.add(new Treasure("Shogulador",1,TreasureKind.BOTHHANDS));
         unusedTreasures.add(new Treasure("Varita de atizamiento",3,TreasureKind.ONEHAND));
-        unusedTreasures.add(new Treasure("Tentáculo de pega",2,TreasureKind.HELMET));
+        unusedTreasures.add(new Treasure("Tentaculo de pega",2,TreasureKind.HELMET));
         unusedTreasures.add(new Treasure("Zapato deja-amigos",1,TreasureKind.SHOES));
 
         shuffleTreasure();  //Esto no va aquí, pero lo pongo porque no se llama nunca a esta función para barajar
@@ -106,7 +106,7 @@ public class CardDealer {
         BadConsequence badGorronUmbral = new NumericBC("Pierdes todos tus "
                 + "tesoros visibles",0,BadConsequence.MAXTREASURES,0);
         Prize prizeGorronUmbral = new Prize(3,1);
-        unusedMonsters.add(new Monster("El gorrón en el umbral",10,badGorronUmbral,
+        unusedMonsters.add(new Monster("El gorron en el umbral",10,badGorronUmbral,
         prizeGorronUmbral));
         
         //H.P Munchcraft
@@ -159,7 +159,7 @@ public class CardDealer {
         BadConsequence badPollipolipo = new NumericBC("Da mucho asquito. Pierdes"
                 + " 3 niveles",3,0,0);
         Prize prizePollipolipo = new Prize(1,1);
-        unusedMonsters.add(new Monster("Pollipólipo volante",3,badPollipolipo,
+        unusedMonsters.add(new Monster("Pollipolipo volante",3,badPollipolipo,
         prizePollipolipo));
         
         // Yskhtihyssq-Goth
@@ -186,7 +186,7 @@ public class CardDealer {
                 + " Pierdes un casco visible",0,new ArrayList(
                 Arrays.asList(TreasureKind.HELMET)),new ArrayList());
         Prize prizeEspia = new Prize(1,1);
-        unusedMonsters.add(new Monster("El espía",5,badEspia,prizeEspia));
+        unusedMonsters.add(new Monster("El espia",5,badEspia,prizeEspia));
         
         //El Lenguas
         BadConsequence badLenguas = new NumericBC("Menudo susto te llevas. "
@@ -199,7 +199,7 @@ public class CardDealer {
                 + "tanta cabeza. Perdes 3 niveles y tus tesoros visibles de las"
                 + "manos",3,new ArrayList(Arrays.asList(TreasureKind.BOTHHANDS)),new ArrayList());
         Prize prizeBicefalo = new Prize(1,1);
-        unusedMonsters.add(new Monster("Bicéfalo",20,badBicefalo,prizeBicefalo));
+        unusedMonsters.add(new Monster("Bicefalo",20,badBicefalo,prizeBicefalo));
         
         //
         // SECTARIOS
