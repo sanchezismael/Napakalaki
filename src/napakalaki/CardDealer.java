@@ -113,7 +113,7 @@ public class CardDealer {
         BadConsequence badHP = new SpecificBC("Pierdes la armadura visible",
                 0,new ArrayList(Arrays.asList(TreasureKind.ARMOR)),new ArrayList());
         Prize prizeHP = new Prize(2,1);
-        unusedMonsters.add(new Monster("H.P Munchcraft",6,badHP,prizeHP));
+        unusedMonsters.add(new Monster("H.P. Munchcraft",6,badHP,prizeHP));
         
         //Bichgooth
         BadConsequence badBichgooth = new SpecificBC("Sientes bichos bajo la "
