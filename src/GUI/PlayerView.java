@@ -33,6 +33,7 @@ public class PlayerView extends javax.swing.JPanel {
     public void setPlayer(Player unPlayer){
         playerModel = unPlayer;
         
+        ButtonStealTreasure.setVisible(true);
         LabelName.setText(playerModel.getName());
         LabelLevel.setText(Integer.toString(playerModel.getLevels()));
         LabelDead.setText(Boolean.toString(playerModel.isDead()));
